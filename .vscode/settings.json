@@ -1,5 +1,14 @@
 {
   "files.associations": {
     "*.css": "tailwindcss"
-  }
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "classes",
+    ".*Classes",
+    "cls.*",
+    ".*Cls"
+  ]
 }
