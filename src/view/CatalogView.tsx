@@ -23,11 +23,7 @@ function ProductListSettings() {
 }
 
 function Product({ data }: { data: Vehicle }) {
-  const { brand, model, image, description } = data;
-
-  function showDescription() {
-    alert(description);
-  }
+  const { id, brand, model, image } = data;
 
   const name = `${brand} ${model}`;
   const price = formatPrice(data.price);
@@ -47,9 +43,9 @@ function Product({ data }: { data: Vehicle }) {
     ),
   };
   return (
-    <button
+    <Link
       className="bg-neutral-700 rounded-xl overflow-hidden text-left"
-      onClick={showDescription}
+      to={`/catalog/${id}`}
     >
       <figure className="h-full relative overflow-hidden">
         <img className={classes.img} src={image} alt="" />
@@ -60,7 +56,7 @@ function Product({ data }: { data: Vehicle }) {
           </p>
         </figcaption>
       </figure>
-    </button>
+    </Link>
   );
 }
 
