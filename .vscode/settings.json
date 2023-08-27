@@ -1,5 +1,14 @@
 {
   "files.associations": {
     "*.css": "tailwindcss"
-  }
+  },
+  "tailwindCSS.experimental.classRegex": [
+    /**
+     * https://github.com/tailwindlabs/tailwindcss/issues/7553#issuecomment-735915659
+     * https://github.com/tailwindlabs/tailwindcss/discussions/7554#discussioncomment-4440751
+     */
+    "\\/\\*\\s*tw\\s*\\*\\/\\s*[`'\"](.*)[`'\"];?",
+    ["(?:twMerge|twJoin|C)\\(([^\\);]*)[\\);]", "[`'\"]([^'\"`,;]*)[`'\"]"],
+    "twc\\`(.*)\\`;?"
+  ]
 }
