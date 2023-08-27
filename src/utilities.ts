@@ -24,3 +24,14 @@ export function C(...classes: Array<string | boolean | null | undefined>) {
 export function sleep(seconds: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, seconds * 1000));
 }
+
+export function formatPrice(
+  price: number,
+  options: Intl.NumberFormatOptions = {
+    style: "currency",
+    currency: "USD",
+    notation: "compact",
+  }
+): string {
+  return new Intl.NumberFormat(undefined, options).format(price);
+}

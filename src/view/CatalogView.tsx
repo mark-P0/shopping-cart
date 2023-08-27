@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { C, sleep } from "../utilities.ts";
+import { VehiclesContext } from "../controller/contexts/VehicleContext.tsx";
+import { Vehicle } from "../model/vehicles.ts";
+import { C, formatPrice } from "../utilities.ts";
 import { Spinner } from "./components/Spinner.tsx";
 
 function NavBar() {
@@ -20,34 +22,60 @@ function ProductListSettings() {
   );
 }
 
-// TODO Effects on-hover for each product
-function Product() {
+function Product({ data }: { data: Vehicle }) {
+  const { brand, model, image, description } = data;
+
+  function showDescription() {
+    alert(description);
+  }
+
+  const name = `${brand} ${model}`;
+  const price = formatPrice(data.price);
+  const classes = {
+    img: C(
+      "object-cover",
+      "h-full aspect-auto",
+      "transition duration-1000 ease-out",
+      "grayscale hover:grayscale-0 hover:scale-110"
+    ),
+    label: C(
+      "pointer-events-none", // Allow background hover effects
+      "absolute top-full -translate-y-full",
+      "w-full",
+      "py-3 px-4",
+      "bg-black/30"
+    ),
+  };
   return (
-    <div className="bg-green-500">
-      <code>product</code>
-    </div>
+    <button
+      className="bg-neutral-700 rounded-xl overflow-hidden text-left"
+      onClick={showDescription}
+    >
+      <figure className="h-full relative overflow-hidden">
+        <img className={classes.img} src={image} alt="" />
+        <figcaption className={classes.label}>
+          <h3 className="uppercase tracking-wider font-bold">{name}</h3>
+          <p className="text-xs tracking-widest font-thin text-neutral-400">
+            {price}
+          </p>
+        </figcaption>
+      </figure>
+    </button>
   );
 }
 
 // TODO Read / React to `CatalogViewContext`
 function ProductList() {
-  type ProductEl = ReturnType<typeof Product>;
-  const [productEls, setProductEls] = useState<ProductEl[]>([]);
-  useEffect(() => {
-    (async () => {
-      await sleep(1);
-      setProductEls(Array.from({ length: 30 }, () => <Product />));
-    })();
-  }, []);
-
-  if (productEls.length === 0) {
+  const data = useContext(VehiclesContext);
+  if (data.length === 0) {
     return (
-      <section className="grid place-items-center">
+      <div className="grid place-items-center">
         <Spinner className="w-24 h-24" />
-      </section>
+      </div>
     );
   }
 
+  const productEls = data.map((data) => <Product data={data} />);
   const classes = C(
     "h-full overflow-y-scroll",
     "grid grid-cols-3 auto-rows-[33%]",

@@ -1,12 +1,15 @@
 import { Outlet, Route } from "react-router-dom";
+import { VehiclesContextProvider } from "./controller/contexts/VehicleContext.tsx";
 import { CatalogView } from "./view/CatalogView.tsx";
 import { LandingView } from "./view/LandingView.tsx";
 
 function App() {
   return (
-    <div className="select-none">
-      <Outlet />
-    </div>
+    <VehiclesContextProvider>
+      <div className="select-none">
+        <Outlet />
+      </div>
+    </VehiclesContextProvider>
   );
 }
 
