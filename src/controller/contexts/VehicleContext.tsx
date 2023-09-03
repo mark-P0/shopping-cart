@@ -1,6 +1,7 @@
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
-import { TEMPORARY_HARDCODED_DATA, Vehicle } from "../../model/vehicles.ts";
-import { Empty, sleep } from "../../utilities.ts";
+import { readProducts } from "../../model/firebase/db.ts";
+import { Vehicle } from "../../model/vehicles.ts";
+import { Empty } from "../../utilities.ts";
 
 export const VehiclesContext = createContext<Vehicle[]>([]);
 
@@ -9,9 +10,8 @@ function useVehicles() {
 
   useEffect(() => {
     (async () => {
-      // TODO Connect with API
-      await sleep(1);
-      setVehicles([...TEMPORARY_HARDCODED_DATA]);
+      const data = await readProducts();
+      setVehicles(data);
     })();
   }, []);
 
