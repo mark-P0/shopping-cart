@@ -22,9 +22,6 @@ export type Vehicle = {
 // export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = []
 // TODO BEFORE COMMIT uncomment this and delete everything after!!!
 
-import PLACEHOLDER_IMAGE from "../view/assets/PLACEHOLDER_IMAGE.png";
-
-// TODO BEFORE COMMIT Empty this out!
 /* prettier-ignore */
 /* cspell:disable */
 export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
@@ -41,7 +38,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "From every possible angle, the 8C Competizione is a steel-and-carbon-fiber supermodel of the highest order. Yet you might be surprised that it wasn\u2019t designed by one of the famous Italian coachbuilders\u2014instead the 8C was designed in-house at Alfa Romeo\u2019s own design center. The 8C also has the beast to back up the beauty, using a version of the 4.3-liter V8 that sees duty in the Maserati Coupe and the Ferrari F430, and is precisely balanced with a 6-speed transaxle mounted just ahead of the rear wheels. Keeping all the weight inside the wheelbase allows the 8C to dance with the finest corner-carvers around, and it can hold its own at a stoplight drag by handily laying down 12.4-second quarter miles. Of course, with those looks, a simple cruise down the boulevard will rack up double-takes without needing to even let the 8C\u2019s 450 horsepower sing its warbling quad-exhaust note.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Falfa-romeo-8c-competizione.png?alt=media&token=05987ec2-0789-4d63-9030-c941b8e043aa",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/6/62/HOR_XB1_Alfa_8C.png"
   },
   {
@@ -57,7 +54,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Roadster",
     "description": "In the tradition of the open-air Giulietta of the 1950\u2019s, but with all the performance and technology of the 8C Competizione Coupe, the 8C Spider is as graceful as you\u2019d expect from an Alfa. It is also ready to pounce given a little motivation. Its body lines are supple; its interior boasts exposed carbon fiber and aluminum. ",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Falfa-romeo-8c-spider.png?alt=media&token=0a4b6888-940e-4f2f-81e7-bacb6bff8ced",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/5/52/HOR_X360_AR_8C_10.png"
   },
   {
@@ -73,7 +70,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Hatchback",
     "description": "Alfa fanatics are in for a treat\u2014the style-leading Italian automaker teamed up with fashion house Italia Independent to release a special version of the already stunning Giugiaro-penned Brera. An optional and unique paint application, an opaque coating called \u201cTitanium,\u201d gives the Brera a distinct look that meshes well with the defiantly aggressive front quarters\u2014although if it doesn\u2019t suit you, pull the Brera into Forza\u2019s in-game paint studio and drape the sleek hatch with a custom livery. Additionally, the 3.2-liter V6 variant not only gets style points on the boulevard, it also helps make the Brera a capable sports coupe that can get out of its own way quite effectively. That\u2019s because the Alfa also packs all-wheel drive, called Q4 in Alfa-speak. The result is a modern Alfa Romeo coupe that matches hot looks with hot performance, in a way only the motoring spirit of Italy can deliver.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Falfa-romeo-brera-italia-independent.png?alt=media&token=c9d5ff1f-f65b-4d20-a1ed-2b3ffd8949bb",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/d/dc/MOT_XB360_Alfa_Romeo_Brera.png"
   },
   {
@@ -89,7 +86,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Hatchback",
     "description": "It may be the smallest Alfa offered, but the MiTo packs a lot of the spirit of the company\u2019s halo car, the 8C Competizione, into a compact but shapely package. \u201cMiTo,\u201d incidentally, is named after the two Italian cities that played a role in its design and production: Milan, where the car was styled by the Centro Stile Alfa Romeo studio; and Turin (Torino in Italian), where the Mirafiori plant is located. The bold LED taillights and expressive face of the MiTo make it clear this puppy wants to mix it up a bit and have fun. The MiTo not only wears Alfa\u2019s corporate shield well, it also does the marque\u2019s illustrious history of sporting cars justice by coaxing 153 horsepower out of a 1.4-liter engine through the use of a turbocharger. It provides a nice fat torque curve, so no waiting around while the turbo spools up to unleash its full potential. Paired with Alfa\u2019s sport suspension know-how, the MiTo is a supermini that\u2019s a lot of fun to sling around.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Falfa-romeo-mito-qv.png?alt=media&token=a4c3307b-869e-4e17-a45b-3288912125c1",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/b/b5/MOT_XB360_Alfa_Romeo_Mito.png"
   },
   {
@@ -105,7 +102,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 1,
     "body": "Track",
     "description": "Everything about the Ariel Atom is amazing. Its shape is practically automotive euphoria by itself, and that\u2019s before you get it on the track. To drive one is shocking. The new V8 version takes performance to unprecedented levels and keeps the Atom at the absolute pinnacle of ultimate track toys. Sure it\u2019s street legal, but the Atom is at home at the track or even the drag strip. Ariel claims 0-60 acceleration to be 2.3 seconds. Few motorcycles can even match those numbers; it follows, since Ariel used to build some of the most loved British bikes in history. Here are just a few of the mind-blowing specs that make the Atom 500 what it is: a John Hartley-designed 500 horsepower Ariel 3.0 liter, weighing in at 198 pounds, a Sadev six-speed sequential transmission, Dymag magnesium wheels, combined with its exo-skeleton chassis with carbon fiber body panels and foils the Atom weighs in at a phenomenal 1,213 pounds. Most drivers won\u2019t even be able to handle this kind of power-to-weight ratio right out of the box, but learning to reel it in will be a lot of fun.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fariel-500-v8.png?alt=media&token=68363605-767e-4f6a-87e1-869785e874ed",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/70/HOR_XB1_Ariel_Atom.png"
   },
   {
@@ -121,7 +118,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "A track-tuned version of the race-bred supercar of the road, the KZ1R is capable of a top speed of 200 mph and 0-60 acceleration of three seconds. Ascari cars are hand-built on a state-of-the-art, carbon-fiber, monocoque adding to their potential as track superstars. Powered by the naturally aspirated BMW M5, 5.0-liter V8 and feather light at less than 3,000 lbs, despite luxury appointments such as electric windows, the KZR1 delivers an intensely exciting ride. The interior is all business and stripped to the bare essentials while still providing comfort inside the built-in safety cage. Outside, the front splitter and rear-wing generate additional downforce while complimenting the aerodynamic smoothness of the elegant body. Ascari will build only 50 KZ1R models so your best bet of getting close to one just might be in Forza Motorsport 4.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fascari-kz1-r-limited-edition.png?alt=media&token=5052af41-3060-4509-aa2b-5c42f951ddd8",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e3/HOR_XB1_Ascari_KZ1R.png"
   },
   {
@@ -137,7 +134,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "It\u2019s a rare car that can walk the tightrope between a classic grand touring experience and state-of-the-art engineering, but the DB9 does just that. It exudes an air of hand-crafted Britishness from every aluminum panel, wood insert, and leather-trimmed surface--and yet under the skin lives a thoroughly modern assembly of extruded aluminum bonded with a high-tech adhesive, a cutting-edge ZF transaxle out back, and a 21st century V12 under the bonnet (as they say in the island nation that spawned the car). The DB9 manages to turn these modern accoutrements into a classic GT driving experience, although the performance numbers would make any actual classic Aston blush, as 60 mph comes in a blistering 4.7 seconds. It doesn\u2019t hurt that the lines of the car, penned by the legendary designers Ian Callum and Henrik Fisker, are stunningly gorgeous from any angle. The pretty DB9 maintains all of the grace and poise of the headiest Astons of old, with contemporary performance and unparalleled luxury\u2014not a bad combination, all told.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faston-martin-db9-coupe.png?alt=media&token=ad649d91-a476-4461-b84f-6082b483890c",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/9/95/MOT_XB360_Aston_Martin_DB9_05.png"
   },
   {
@@ -153,7 +150,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "If you watched the James Bond film Casino Royale, you\u2019ll remember the first time you laid eyes on the Aston Martin DBS coupe. The most famous fictional British spy spooled up the 6-liter V12, based upon the unit found in the DBRS9 racecar, and charged off in hot pursuit of the evil Le Chiffre, only to crest a small hill and find a beautiful woman tied up and laying in the middle of the road. Only James Bond could survive the resulting cartwheeling crash that utterly destroyed the svelte coupe. It was a shame the Aston had to take one on the chin, because the DBS is one of the most beautiful cars on the road. In the grand Aston Martin tradition, the extremely limited-production DBS combines an unparalleled handcrafted interior with serious performance credentials. In case you didn\u2019t think the DBS was unique enough already, the key fob is topped with polished stainless steel and finished with sapphire crystals. And you thought super-spies preferred to keep a lower profile.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faston-martin-dbs-coupe.png?alt=media&token=2cebfdd2-a96b-4884-9a6e-9469af4ee309",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/ef/MOT_XB1_AM_DBS.png"
   },
   {
@@ -169,7 +166,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "It only takes a glance at the One-77 to see that each curve, crease, and air intake has been sprinkled with superhero serum. Aston boss Ulrich Bez felt that the company needed a car that was completely unrestricted by convention, and so they unleashed the One-77 to show what is possible when no expense is spared. Pop the hand-formed aluminum hood and the investment is obvious, as the 7.3-liter V12, draped with polished aluminum and bare carbon fiber, is a work of art. Fire it up and few cars can match the burbling howl of 750 hand-crafted British ponies. It\u2019s sculpture sitting still, but don\u2019t park it in a museum; to show off the beauty and purpose of this special Aston, try firing up Photo Mode and get to know this just what makes this beauty so special.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faston-martin-one-77.png?alt=media&token=5a393880-5c26-4a83-a336-cd0ec6ab9d69",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/f/fe/HOR_XB1_AM_One-77.png"
   },
   {
@@ -185,7 +182,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Should you encounter the urge to travel at speeds upwards of 200 mph in regal comfort, the Vantage S awaits. Packed with a V12, the Vantage S just pulls and pulls\u2026 and then pulls some more. Excess is standard equipment in an Aston Martin and the Vantage S positively exudes it. This is more car than most will ever need, but isn\u2019t half the fun knowing that a car is capable of much more than it will ever be asked? Take this ultimate luxury sport coupe for a ride and decide for yourself.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faston-martin-vantage-s.png?alt=media&token=4599fffc-ff4a-4350-9635-d34c40619862",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/b/bf/HOR_XB1_AM_V12_13.png"
   },
   {
@@ -201,7 +198,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "SUV",
     "description": "Lots of vehicles can swallow an entire soccer team, and there are plenty of turbodiesels running around. There\u2019s even a very small group of vehicles that produce more torque than high-performance sportscars like the Chevrolet Corvette ZR-1 and the Mercedes McLaren SLR. Fewer still utilize racing technology perfected at Le Mans. Finally, there is only one production vehicle on the road today that uses a V12 diesel engine. How many autos do you need to do all of these things? Just one: the Audi Q7 V12 TDI. The German automaker has always been on the forefront of engineering excellence, introducing the quattro all-wheel drive system that rewrote motorsports history, and the Q7\u2019s V12 TDI is a masterpiece of engineering drawing from Audi\u2019s improbable success racing at Le Mans with diesel prototypes. Thankfully the Q7 utilizes that quattro system to put the power down, because TopGear host Jeremy Clarkson rightly points out that the gargantuan 738 ft-lbs. of torque is \u201cenough to restart a dead planet.\u201d If you only could have one vehicle to do everything with, you\u2019d be hard pressed to pick a better candidate than the all-conquering Q7.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-q7-v12-tdi-quattro.png?alt=media&token=0f40cb30-c17b-4a20-b8bd-03bc89b3996c",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/1/1f/MOT_XB1_Audi_Q7.png"
   },
   {
@@ -217,7 +214,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The R8 had one of the most memorable introductions ever, roaring away from the severed grille of \u201cold luxury\u201d in a Superbowl ad parodying a famous scene from The Godfather. While the commercial won awards and acclaim, the R8 really didn\u2019t need any help drawing attention to itself. Fusing Lamborghini DNA with Audi aluminum, bestowed with LED-ringed headlights brooding over deep, dark air intakes, emboldened with contrasting \u201csideblades,\u201d the R8 can\u2019t help but be the center of attention. That\u2019s what happens when a stunning concept car is translated into a production roadcar with almost no changes whatsoever. All four wheels are motivated by a highly refined 4.2-liter V8, resting under a glass cover for all to see. Despite the power and the Gallardo bits lurking under the gorgeous body, the R8 is tame and luxurious around town, like a superhero in disguise as a dapper but harmless civilian. Speaking of superheroes, the R8 4.2 was Tony Stark\u2019s ride of choice in the hit film Iron Man.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-r8-coupe-42-fsi-quattro.png?alt=media&token=bc922408-90c5-4be8-82df-124cfce98dd7",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/6/6c/MOT_XB360_Audi_R8_08.png"
   },
   {
@@ -233,7 +230,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The wonderful part about owning both an Italian supercar manufacturer and one of the premiere German automakers is that you can cherry-pick the best of both worlds and create something incredible. Throbbing under the Audi R8\u2019s glass engine cover is the Lamborghini Gallardo LP560-4\u2019s incredible V10, nestled in the middle of Ingolstadt\u2019s own highly advanced aluminum monocoque. Having grown two cylinders and a liter larger since its introduction, the R8 5.2 muscles its way into the company of supercars, but it does so with class and comfort rather than simply unruly brute force. Fortunately, the larger engine and increased performance haven\u2019t changed the alluringly athletic sheetmetal in any way, allowing the R8 to stay at the forefront of auto styling. In many ways it draws comparisons with its competitors from Stuttgart, but the R8 translates its unique attributes into such an appealing form that it truly has no rivals.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-r8-coupe-52-fsi-quattro.png?alt=media&token=f2c79080-8dc7-4a5e-b62d-3f57df48ae7a",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/08/MOT_XB1_Audi_R8_10.png"
   },
   {
@@ -249,7 +246,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Designed to challenge the AMG- and M- offerings from those other German auto makers, the 2011 Audi RS5 is a tidy package of blistering performance and aggressive trim. Its high performance comes without reliance on tricks\u2014just a 4.2 liter naturally aspirated V8 that manages around 450 hp. It\u2019s relatively thin on torque\u2014317 foot-pounds, to be exact\u2014but makes up for it with engine revs that top out north of 8,000 RPM. Audi\u2019s technical wizardry isn\u2019t just found under the hood\u2014the RS5\u2019s wheel-selective toque-vectoring system, and crown-gear center differential mean the car can shift a tremendous amount of power to the front or rear wheels in an instant. The result is a powerful and grippy AWD; a car that\u2019s as comfortable on the tight turns of a race track as it is speeding along back roads on a Sunday drive.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-rs5.png?alt=media&token=fe6fd134-1ca9-4d2d-aaba-b201f4d9427b",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/4/45/HOR_XB1_Audi_RS_5.png"
   },
   {
@@ -265,7 +262,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "Wagon",
     "description": "If the local grocery store or soccer field is half a state away, the RS 6 Avant should be your car of choice. Why? Because the Avant can get a family of five and their gear from point A to point B at speeds that would only qualify as \u201cabsurd.\u201d Under its gorgeous composed form is a lightweight, mostly aluminum chassis. Beneath the hood is a twin-turbo V8 with enough juice to put this wagon in the supercar category. More than 500 horsepower and the accompanying torque put through Audi\u2019s proven AWD system give this wagon the tools to get the job done, whether it be on tarmac, the back roads, or any path set before it. Restyled for 2015, the RS 6 is fresher than ever and ready to blow your mind as well as the doors off most anything that comes within striking distance.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-rs6-avant.png?alt=media&token=7666a365-2bcc-41e8-8119-6e0a02a44722",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c0/HOR_XB1_Audi_RS_6_15.png"
   },
   {
@@ -281,7 +278,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Audi\u2019s hotter version of the well-proportioned A5 coupe is not only attractive and luxurious, it\u2019s also a strong performer (as you might expect from any vehicle wearing Audi\u2019s \u201cS\u201d badge). Thank Audi\u2019s styling wizard Walter de\u2019Silva for the exterior, and Audi\u2019s relentless competition with other high-end manufacturers and a decades-long love affair with all-wheel drive for the performance aspect. The brand new chassis is highly rigid, as well providing a longer wheelbase than previous Audis thanks to cleaver positioning of drivetrain components, allowing for better weight distribution but also less front overhang\u2014a feature that helps the S5 corner more effectively, as well as improving the clean lines of the car. Power is provided by a supple and strong 4-liter V8, and with 349 horsepower it\u2019s not surprising that performance is exceptional\u2014the large coupe takes less than 5 seconds to exceed 60 mph. And it looks good doing it, too.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-s5-coup%C3%A9.png?alt=media&token=a8a538d8-b354-4bc1-b1ca-4a65bda1b533",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/3/36/MOT_XB360_Audi_S5_07.png"
   },
   {
@@ -297,7 +294,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The TT RS is emblematic of how upstart Audi has completely upended the \u201cform follows function\u201d mantra of the German competition. The TT took the world by storm with its unique style (dubbed \u201cbauhaus\u201d by the press) and performance credentials, and the new TT RS is all this and more. The turbocharged inline-five takes Audi back to its rally roots (the original Quattro Sport used the same configuration to decimate the competition in the 1980s). It\u2019s no retro tribute, however, as this all-wheel drive stunner is stuffed to the gills with modern engine tech like direct injection, and sports a cylinder head borrowed from the Lamborghini Gallardo. It\u2019s a total package that makes the coupe scoot: 60 mph is dispatched in an exotic 4.5 seconds with a distinctive snarl from the 2.5-liter motor. The first TT to wear the storied RS badge, the TT RS caries over several RS trademarks like the enormous oval twin exhaust tips and larger front intakes, which complement the sporty dimensions of the coupe. With handling worthy of any of Audi\u2019s RS models, the TT RS is most at home on a highly technical track.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-tt-rs-coupe.png?alt=media&token=31157d0b-2152-4c43-9f8b-a01e80d70a15",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/8/8c/HOR_XB1_Audi_TT.png"
   },
   {
@@ -313,7 +310,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Finally, a new Audi TT is available in Forza! The TTS is an elite example of VW\u2019s MQB platform (a strategy designed to reduce costs and shorten production times) but, at its heart, it\u2019s a thrilling, eminently drivable Audi experience. Featuring more than 300 horsepower from its turbo four-cylinder, the TTS delivers acceleration that is nearly on par with a Porsche 911 Carrera. Coupled with all-wheel-drive, it will beg you to push its considerable limits to their max.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Faudi-tts-coup%C3%A9.png?alt=media&token=df3eff16-e95f-4b97-9902-076bf5f29188",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/3/3e/HOR_XB1_Audi_TTS.png"
   },
   {
@@ -329,7 +326,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "When confronted by the unrivaled engineering masterpiece that is the Bugatti Veyron 16.4, you could consider its paradigm-shifting technical accomplishments such as the 8-liter 16-cylinder quad-turbocharged engine. Or the laundry list of records it shattered, being the fastest, quickest, and most powerful production car ever. Or you could mull over the fact that despite having more than 1,000 horsepower, twelve radiators, and a highly-advanced all-wheel drive system, the Veyron is as pleasing to the eye as it is painful to the wallet. That\u2019s because it\u2019s also one of the most expensive cars ever to be offered to the public, at more than a million dollars each, and Bugatti isn\u2019t making a profit on any of them. You\u2019ll need a seriously long straight to appreciate the Veyron\u2019s unprecedented 253 mph top speed, making Forza 4\u2019s meticulously rendered N\u00fcrburgring straight a perfect place to test your nerves as you peg the accelerator and crest 150 mph in less than 11 seconds. That being said, you won\u2019t need anything special to appreciate how the Veyron reset the bar in hypercar performance, style, and sheer engineering prowess.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fbugatti-veyron-164.png?alt=media&token=2187b92a-02d3-4f2e-b459-ac14330a1d56",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/d/de/MOT_XB360_Bugatti_Veyron_09.png"
   },
   {
@@ -345,7 +342,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "There is no substitute for the Veyron Super Sport; even among hypercars it stands alone. The Veyron alone is the fastest car in the world but, for some, that is not enough. If the Super Sport cannot quench your thirst for over-the-top speed and horsepower the only alternative is start racing airplanes, because very few machines match the SS for pure ground speed.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fbugatti-veyron-164-super-sport.png?alt=media&token=2bfc2f54-bdc1-4adc-bb88-d64c1ee89e30",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/5/59/HOR_XB1_Bugatti_Veyron.png"
   },
   {
@@ -361,7 +358,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Track",
     "description": "When the cars you built for racing become banned from racing and breed franchise slogans such as \u201cCaterham Seven, the Car That's Too Fast to Race\u201d you know you\u2019re doing something right. The Caterham Superlight is the latest masterwork created by one of the patriarchs of racing design, Colin Chapman. The basic design of the Superlight R500 are the bones of the Lotus 7 which has existed in a mostly unaltered form for more than 50 years. Sure, there have been evolutions in materials, tweaks to dimensions, and the old live-axle rear suspension has long been replaced by a De Dion rear axle. At its heart, however, this is the same car that proved itself unfairly advantageous to race other cars. Caterham purchased the rights to the Lotus 7 in 1973 and has since been \u201csimplifying and adding lightness\u201d as Chapman prophesized so long ago. The Superlight R500 represents a weapons-grade thrill car that can deliver breathtaking performance anywhere it\u2019s required. There are few cars in the world that can match its 0-60 times (at sub-3 seconds) and even fewer that can also equal its lap times that are otherwise only achievable in a purpose-built race car.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fcaterham-superlight-r500.png?alt=media&token=8d59fedb-07a6-4e1b-83fd-ad93c39d4e7e",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/0a/HOR_XB1_Caterham_Superlight.png"
   },
   {
@@ -377,7 +374,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Muscle",
     "description": "Chevy\u2019s pony car is back to mix it up with the newest FoMoCo and Mopar contenders, just like in the glory days. The Camaro SS has a new set of clothes that mix classic Camaro elements with an unbridled aggression that\u2019s evident in every sharp edge. The Camaro\u2019s glowering face is the first sign this thing means business. And then there\u2019s the muscle to back up the looks, with the proven LS smallblock making big block power figures: 426 horsepower and 420 ft-lbs. of torque. That\u2019s more than enough to knock out the quarter in just a hair over 13 seconds, dead stock. Of course, if you want an even greater thrill, a quick trip to the Upgrade Shop will allow you to tweak and mod to your heart\u2019s content. The best place to experience your frenzied creation is out on the strip or the circuit; line up against your friends see who comes out on top in your own Pony Car shootout.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fchevrolet-camaro-ss.png?alt=media&token=aa941122-abaa-4a19-8333-d4945aa306bd",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/3/3e/MOT_XB360_Chevy_Camaro_2010.png"
   },
   {
@@ -393,7 +390,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Muscle",
     "description": "This bow-tie\" does more than just go fast in straight line, it escalates the battle between pony cars across the spectrum. In respect to its ZL1 heritage, this is a limited production, special order hot rod that stands on its own among factory-built cars. Tipping its hat to today\u2019s market, that legendary performance is met with comfort, cornering, and looks that will draw a crowd.\"",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fchevrolet-camaro-zl1.png?alt=media&token=63874693-6d65-41bf-a698-3b8bf3044f84",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/9/98/MOT_XB1_Chevy_Camaro_12.png"
   },
   {
@@ -409,7 +406,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Tourer",
     "description": "The real star of the early 1960s hit show \u201cRoute 66\u201d was the Corvette. Main characters Tod and Buz cruised the open highway in search of adventure, somehow getting a new Corvette every year. Chevrolet was the series\u2019 main sponsor and the partnership resulted in a starry image for the Corvette. While Corvette sales benefited from the exposure, improvements in performance options continued to make the Vette the American car of choice for sport driving enthusiasts of the era or for those trying to look the part. The most potent option, the 283 Fuelie, would put out 290 horsepower. Connected to a four-speed with Positraction, performance was the best in the business. On the outside there were few changes to make the 1960 model stand out from its predecessors or later models until the Corvette Sting Ray was released in 1963.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fchevrolet-corvette-c1-1957.png?alt=media&token=9473a126-bab9-496f-b740-ee8e8cbbab86",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/6/60/HOR_XB1_Chevy_Corvette_60.png"
   },
   {
@@ -425,7 +422,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "If the ZR1 didn\u2019t exist, driving enthusiasts everywhere would still be celebrating the amazingness of the latest Z06. But the ZR1 is real, and no one can ignore the 638 horsepower gorilla in the room. The ZR1 packs the most powerful engine that GM has ever put in a production car, and it\u2019s not simply for show: how does a quarter mile time of just a bit over 11 seconds strike you? Or a top speed exceeding 200 mph? Factor in some adaptive suspension that continually adjusts to road conditions, massively sticky rubber, and a weight-saving cocktail of aluminum and carbon fiber, and you\u2019ve got a Corvette that doesn\u2019t just mix it up with the European exotics\u2014it blows them away. The source of the ZR1\u2019s superpowers is visible from the outside: peer through the clear polycarbonate hood window and you\u2019ll see the dual intercoolers sitting atop the supercharger, feeding copious amounts of boost into the LS9 smallblock. Acceleration is savage, but it\u2019s not as unruly as you might expect, and in the hands of a respectful driver few production cars can equal the ZR1\u2019s sub-eight minute lap around the N\u00fcrburgring, perhaps the harshest real-world test of any car. Do you have what it takes to master the fastest GM vehicle ever?",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fchevrolet-corvette-zr1-c6.png?alt=media&token=1c392d1d-e29a-46e4-97f9-a7230a39a3e6",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/1/15/HOR_XB1_Chevy_Corvette_09.png"
   },
   {
@@ -441,7 +438,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "Sedan",
     "description": "Getting right to it, the Chrysler 300 SRT8 has a huge Hemi under the hood. More than 450 horsepower horsepower and 465 pound-feet of torque connected to the rear wheels makes for a tire-smoking good time. It also makes for some pretty amazing performance; like 0-60 mph in less than five seconds and under thirteen second quarter mile times. Performance like this used to be born of modifications and aftermarket parts. Now Chrysler is giving it to you right out of the box. Even fuel economy is boosted. Do you remember the days when more horsepower meant lower mileage? Those days are past, now comfort and sophistication meet monster muscle and performance in the 300 SRT8, not surprisingly Chrysler has made them go delightfully hand in hand.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fchrysler-300-srt8.png?alt=media&token=7284b253-f181-4728-8b87-6bbc3828661a",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c3/HOR_XB1_Chrysler_300.png"
   },
   {
@@ -457,7 +454,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Sedan",
     "description": "Big, brash, and all-American, the Dodge Charger is the perfect platform for the company\u2019s Street and Racing Technology division to make even brasher. Just like any muscle car, classic or modern, the place to start is under the hood, where a bored-out 6.1-liter HEMI\u00ae V8 resides. With 425 horsepower on tap, the Charger definitely isn\u2019t hurting for power\u2014the motor is stout enough to pull the two ton sedan to 60 mph in an even five seconds. For a stonking, rubber-burning, unapologetically muscle-bound bruiser, it makes a respectable showing in the twisties thanks to a plethora of suspension changes and an independent rear end (shared with all rear-drive LX platform cars). With all that thrust and momentum, be thankful that the brakes are gargantuan and up to the task of stopping the Charger at will. Its more-aggressive looks also add to the overall feel, including a bold and functional hood scoop crafted in a wind tunnel to channel cold air to the motor without creating lift. The Charger SRT8 is perfect for practicing powerslides, so find a wide course and hang the sculpted rear flanks out to see what this bad boy\u2019s all about.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fdodge-charger-srt8.png?alt=media&token=30f5d287-7f18-4ce6-9fef-4bbe38a43010",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/eb/MOT_XB360_Dodge_Charger_06.png"
   },
   {
@@ -473,7 +470,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "SUV",
     "description": "In the world of fast pickup trucks, there have been a few standouts, but the 2006 Dodge Ram SRT-10 takes the cake as the most bonkers truck yet assembled. By swiping the powertrain from the Dodge Viper, Dodge\u2019s engineers gave the Ram V10 bragging rights in proportion to its 500 horsepower and 525 ft-lbs. of torque, as well as uncanny performance. This big, heavy truck can hustle to 60 mph in less than five seconds, a fact that the loud exterior is happy to trumpet. There\u2019s a hood scoop that announces the truck is \u201cViper Powered,\u201d the bed wears a large spoiler over a tonneau cover, and the huge wheel arches barely contain the first factory-fitted 22-inch wheels on any vehicle. Inside, there\u2019s a manual shifter on the floor sporting a Viper shift knob, a red \u201cStart\u201d button on the dash, and racing-style seats. And lest you think this Ram\u2019s only good for straight-line drag duties, Dodge fit sport suspension that lowers the truck, as well as a special rear damper to control rear axle hop under acceleration. Paired with sport tires, that means the SRT-10 can pull more than 0.80 lateral Gs on the skidpad. The Ram SRT-10 is a true performer, and it doesn\u2019t let you forget it for an instant.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fdodge-ram-srt-10.png?alt=media&token=174c8863-5d73-4bbe-960c-420fbe95202c",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/05/MOT_XB360_Dodge_Ram_06.png"
   },
   {
@@ -489,7 +486,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The ACR version of the Viper is, to cut right to the chase, a brutally efficient racing machine that is only a hair\u2019s breadth away from being illegal to drive on the street (in fact, to do so, you\u2019ll have to unbolt the front chin spoiler first). The vent-studded hood and massive rear wing are probably going to be the first clues that this is no ordinary Viper. In fact, the ACR has been optimized for two things\u2014lower weight and higher downforce. What\u2019s not part of the package is additional horsepower, because as anyone that\u2019s spent time in a Viper SRT10 should know, it\u2019s not necessary at all. If you need more power than what the ACR provides, you\u2019re probably not driving it correctly. However, anyone would appreciate the uprated brakes, harder track-focused suspension, and race-ready alloy rims. It takes a brave driver to use the ACR hard without first getting to know its limits, and a braver one to attempt to unleash it on a public road, but for those adrenaline junkies who want a Viper that is as close to a Viper Competition Coupe as you could slap a license plate onto (if you really wanted to), then the ACR is your ticket. ",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fdodge-viper-srt-10-acr.png?alt=media&token=0febc6e8-a3d5-480c-b1f5-c7b200253170",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/5/54/HOR_XB1_Dodge_Viper_08.png"
   },
   {
@@ -505,7 +502,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "When Street and Racing Technology, Chrysler\u2019s famed performance group, got their hands on the already sinister Viper, something very powerful and very fast was going to emerge. The result was so good, it replaced the entire Viper range. The SRT-10 packs some serious firepower, with 505 cubic inches (that\u2019s 8.3 liters for you metric types) straining to burst through the prominent hoodscoop. The new bodywork is similar to the old Viper, except distilled and concentrated into a super-strong brew of Mopar muscle. Howitzer-class side-exit exhaust bores harken back to the original Viper\u2019s units, although they\u2019re less likely to scald your legs. Deep side vents in the front fenders and huge chrome rims set off the arched front fenders, and out back there\u2019s a subtly integrated rear decklid spoiler (the only subtle part of the Viper SRT-10). With the top down, the roar of the V10 is staggering. After all these years, there\u2019s nothing quite in the Viper\u2019s class, and that\u2019s a triumph for the big snake with the Dodge badge.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fdodge-viper-srt-10-coupe.png?alt=media&token=b94d0042-fab5-4e22-87b7-06c8050432e7",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/f/ff/MOT_XB360_Dodge_Viper_03.png"
   },
   {
@@ -521,7 +518,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Tourer",
     "description": "Arguably one of the most collectible cars in today's marketplace. With only 33 GTOs originally built, all were designed to be race cars. Powered by the Colombo designed 2953cc V12 engine producing around 300 hp (224 kW), in a car that weighs under 2000 lb (907 kg), with the optimal gearing it is capable of around 174 mph (280 km/h). Only nine were built as RHD, but every one was slightly unique as all were hand made, and purpose built. The created controversy initially as the racing competition claimed it was a new car while Ferrari argued it was just an update from the earlier homologated 250 GT. Ferrari won the argument and the initial name of 250 GT/Comp became 250 GTO with the O\" for Omologato (Homologation in Italian). In their first race, the 1962 Sebring 12 Hours, they won the GT class then followed it up with a class win at Le Mans and just about every race they entered. In the years to come, Ferrari focused on Formula 1 teams and not GT racing, so the 250 GTO was the end of an era.\"",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-250-gto.png?alt=media&token=72144796-9a2c-463e-9603-7b339caaa0ad",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/8/80/HOR_XB1_Ferrari_250_62_GTO.png"
   },
   {
@@ -537,7 +534,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Unofficially referred to as the \u201c288 GTO\u201d (the 288 stands for \u201c2.8 liters, 8 cylinders\u201d), the GTO resurrects a storied name from Ferrari\u2019s past for a new breed of supercar, one that led directly to hypercars like the Enzo years later. Intended to be the homologation spearhead for a FISA Group B race entry (making the \u201comologato\u201d part of \u201cGTO\u201d appropriate), the cancellation of that series led to just 272 GTOs ultimately hitting the road. Bad for race fans, good for collectors. Regardless of its lack of racing pedigree, the GTO is competition-bred, with features like an integral roll hoop and a quick-change rear subframe for easy stage-side maintenance. In a mid-longitudinal position is a twin-turbocharged V8 making 400 horsepower, developed with Ferrari\u2019s F1 experience. A few echoes of the old GTOs made it past the business-only agenda of the GTO, like the rear cooling slits that recall the fender slits of the original GTO.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-288-gto.png?alt=media&token=20c382e1-d93b-476d-a77b-f2dcc5ae7bf1",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/9/94/HOR_XB1_Ferrari_288.png"
   },
   {
@@ -553,7 +550,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Targeted at Ferrari\u2019s most spirited and sport-driving oriented clientele the 430 Scuderia provides the most thrilling ride of all 430\u2019s. Development was focused on lightening the 430, and enough electronics to nearly dial in every aspect of handling and control. This berlinetta exemplifies how Formula One tech can be experienced in a production car.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-430-scuderia.png?alt=media&token=82c7ea12-3d5b-4cb0-bd7c-33fe83fb772e",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/2/2a/HOR_XB1_Ferrari_430.png"
   },
   {
@@ -569,7 +566,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "A new Ferrari is always cause for celebration, and you can still hear the cheers from fans of the 458. Little wonder: the Prancing Pony went above and beyond the call with this gorgeous example of road-devouring art. The 458 produces 562 horsepower and a top speed over 200 mph, giving it the kind of performance you normally only see on the world\u2019s greatest race tracks.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-458-italia.png?alt=media&token=57d2865d-aa5d-4ee3-ac8e-ff6501c5e893",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/9/95/HOR_XB1_Ferrari_458.png"
   },
   {
@@ -585,7 +582,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "For Ferrari\u2019s top-of-the-line two-seater to be named after their own private racetrack, used for testing Ferrari\u2019s F1 cars, it has to be pretty special. The Frank Stephenson-penned lines recall the F430 he also designed, and convey that this big, bold Ferrari shouldn\u2019t be ignored. That\u2019s particularly true when you consider that it\u2019s faster to 60 mph than the mighty Enzo despite weighing nearly 700 lbs. more, can exceed 200 mph, and still can swaddle you and a friend in the butteriest leather this side of Connolly\u2014that is, it can do all this if you can afford to purchase one. The 599 GTB may not be cheap, but what it lacks in bargain-basement pricing it more than makes up for in performance and atmosphere: you can revel in the V12\u2019s gruff bark or bang out shifts based on the shift indicator lights on the steering wheel (accurately modeled in-game, by the way). The 599 is a triumph of engineering, showing that a front-engine V12-powered grand tourer doesn\u2019t have to make many compromises in this day and age.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-599-gtb-fiorano.png?alt=media&token=fd4ed2cc-9626-4d75-b322-d437f09c7fb6",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c0/MOT_XB360_Ferrari_599_GTB.png"
   },
   {
@@ -601,7 +598,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Gran turismo omologata--it means certified for grand touring racing\" in Italian, and Ferrari doesn't use that designation lightly. When the 599 GTB went in for the GTO treatment, they had only to look to the decidedly not-street-legal 599XX version for inspiration. The result is a lighter, more powerful 599 that carries on Ferrari's long tradition of using racing to pioneer technology for road cars. Following the formula of the legendary 250 GTO of the 1960s, this hotter version of Ferrari's halo car puts a 6-liter V12 out front that delivers a tarmac-blistering 670 horsepower, making the 599 GTO not only the most powerful Ferrari road car ever, but also the fastest. That's not just the fastest to 60 miles per hour; it also means that by cutting more than 200 pounds from the GTB and optimizing every system\u2014from the instantly adjustable magnetic suspension system to the lightweight carbon ceramic brakes\u2014it will fly around Ferrari's private Fiorano test track a full second quicker than the wickedly fast Enzo. With lessons learned from Ferrari's F1 program, the 599 GTO's optimized aerodynamics ensure that the 599 GTO can achieve a top speed of 208 miles per hour, and yet the intelligent suspension and the stability and traction control systems mean that the GTO won't bite the hand that shifts. With only 599 examples ever produced, the flagship Ferrari is as rare as it is fast.\"",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-599-gto.png?alt=media&token=30c2d9c0-cb8e-414a-bb06-ed1bb3ac09d5",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/6/6e/HOR_XB1_Ferrari_599_10.png"
   },
   {
@@ -617,7 +614,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "It\u2019s incredibly fast, unimaginably expensive, and you can\u2019t put one in your garage\u2014literally. That\u2019s because, like all \u201cXX\u201d cars, Scuderia Ferrari holds onto the car for owners, maintaining and storing them, so all that owners have to do is show up at the track, strap in (very tightly, for their sake), and let the 599XX loose. While based on the 599 GTB Fiorano, there have been so many changes to bring it to XX specification that it\u2019s impossible to list them all. For example, except the roof, every other body panel has been altered to help with aerodynamics or allow more cooling air to the brakes or engine. Speaking of the engine, meticulously precise construction and an exhaust system that doesn\u2019t have to consider road-going requirements allow the 6-liter V12 to produce 108 more horsepower than its GTB stablemate, allowing the 599XX to accelerate to 100 mph in less than 6 seconds. For the steep entry price and ownership limitations, one thing you don\u2019t get is taillights\u2014those were deleted in favor of exhaust outlets for the active fans that suck air out from under the car below 155 mph. Over that speed, the additional downforce isn\u2019t needed.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-599xx.png?alt=media&token=7841cce2-feb6-4fdb-91ce-937b4b2aec79",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/1/19/HOR_XB1_Ferrari_599XX_10.png"
   },
   {
@@ -633,7 +630,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Think of the Ferrari 612 Scaglietti as a kind of a thank-you note to the man who penned some of the most famous and memorable designs to come out of the Maranello scuderia. (Interestingly, Scaglietti is no longer in the design business, so former rival Pininfarina penned the bodywork as a tribute to their comrade.) Like Sergio Scaglietti\u2019s most famous design, the 250 SWB, his namesake car is a front-engine, rear-drive coupe powered by a large-bore V12\u2014in this case, a 5.7-liter unit. Unlike its predecessor, and indeed unlike any Ferrari previously, the 612 is constructed entirely from aluminum, using the lightweight metal for the space frame chassis as well as the bodywork. Ferrari engineers also pushed the wheels way out to the corners, and moved the engine back in the chassis, for better weight balance. Even though the 612 is a big 2+2 grand tourer, it doesn\u2019t feel so large behind the wheel, retaining a nimbleness that\u2019s characteristic of modern front-engine Ferraris despite its seeming bulk. Few people deserve such an honor, and the 612 is proof that Scaglietti certainly does.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-612-scaglietti.png?alt=media&token=5f3347e2-01e9-4201-8f16-a7a59de83e3b",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/8/8c/MOT_XB1_Ferrari_612.png"
   },
   {
@@ -649,7 +646,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Roadster",
     "description": "You might think that Ferraris should be mid-engined. And this one isn't. You might think Ferraris should have V12s. And this one doesn't. It's called the California, and you have to ask, what's the point of it? Certainly, it's not very pretty, and it has literally the worst built-in telephone of any car in the world. Unless of course you've always wanted to spend your life accidentally phoning everyone you know whose name starts with A. But, on the plus side, it's got a metal folding roof, it's reasonably nice to drive, and it means Ferrari can take money from people who might previously have bought a Mercedes SL which means they can afford to develop proper, wonderful supercars like the 458. So you see, the California does have a point after all.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-california.png?alt=media&token=fd19a2cc-1105-4d45-a0a6-f781d004f830",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d2/HOR_XB1_Ferrari_California_08.png"
   },
   {
@@ -665,7 +662,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Tourer",
     "description": "The Ferrari Dino 246 GT is rightly famous as the Ferrari that wasn\u2019t sold as a Ferrari (it was badged a \u201cDino,\u201d a brand for sub-V12 cars), and for being named after Enzo Ferrari\u2019s son Alfredo \u201cDino\u201d Ferrari, who passed away from muscular dystrophy at the age of 24. Without any of that background, however, the Dino could easily stand alone. The 246 GT\u2019s immediate predecessor, the 206, was conservative-minded Ferrari\u2019s first mid-engine road car and the beginning of a trend that even the reluctant Enzo couldn\u2019t stifle\u2014particularly with styling partner Pininfarina pushing him in that direction (Pininfarina also penned the Dino\u2019s graceful lines). It was also the first Ferrari to use less than 12 cylinders. In the 246 GT\u2019s case, it\u2019s a sweet-sounding V6 that was Dino\u2019s legacy\u2014before Dino passed away, he worked with famed engineer Vittorio Jano on the advanced engine that would ultimately be produced in various forms for almost 40 years. Because the 246 GT was significantly smaller and lighter than other Ferrari models, the 2.4-liter motor\u2019s 195 horsepower makes the baby Ferrari fairly quick. However, a straight line isn\u2019t the best way to experience the 246 GT, because it truly excels is in spirited driving where the mid-engine placement can show off its superior handling characteristics. It won\u2019t take long to understand why Enzo changed his mind about the 246 GT\u2019s layout, and even named it after his beloved son.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-dino-246-gts.png?alt=media&token=9be68042-0457-483c-85ec-e10b3292b4cb",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/2/25/HOR_XB1_Ferrari_Dino.png"
   },
   {
@@ -681,7 +678,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "Never before and perhaps never again will technology and performance come together in a car this fine. Formula One technology is enhanced by components not even allowed at the highest level of racing, such as active aerodynamics and traction control. The Enzo represents one of the automotive world's ultimate expressions of performance and precision.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-enzo.png?alt=media&token=3489a513-8106-43f8-8883-ee693ddecd0a",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/74/HOR_XB1_Ferrari_Enzo.png"
   },
   {
@@ -697,7 +694,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Ferrari\u2019s fastest road car ever is also a car that can be your daily driver, provided, of course, that you can afford it. Exquisitely engineered, the F12 berlinetta will handily beat an Enzo or 599 GTO on the track. Yet all that power is refined; the 730 bhp and 509 lb-ft of torque are delivered in a manner that is calculated and smooth to the point of simplicity. That\u2019s not to say its 0-60 time of 3.1 seconds or its top speed of 211 mph is any less exciting, it just means that the fun factor translates into a slightly more sophisticated feel than that of a track car. This V-12 sounds superb from idle to redline, and its power delivery is ferocious at any RPM.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-f12berlinetta.png?alt=media&token=23426651-188e-417b-ab5e-d84bf8252beb",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/6/6a/HOR_XB1_Ferrari_F12berlinetta.png"
   },
   {
@@ -713,7 +710,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "For the 40th anniversary of the founding of his company, Enzo Ferrari instructed his scuderia to build the ultimate Ferrari. The result was the F40, a car in which the descriptor fast\" is hardly sufficient. Capable of 0-60 in under four seconds, and 100 mph in just over eight, the F40 is a standout, even by Ferrari's already astronomical standards.\"",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-f40.png?alt=media&token=5cd2a9e4-c825-4f4b-87f3-16da1fe572a7",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/1/14/HOR_XB1_Ferrari_F40.png"
   },
   {
@@ -729,7 +726,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Track",
     "description": "Ferrari owners are a lucky few on most days, but with the introduction of the FXX program, there became a smaller number of even luckier owners. That is, if \u201cownership\u201d is the right word, because if you purchase an FXX you can\u2019t take it home. It stays with Ferrari, who invites you to drive it on specially scheduled track days, and then gathers various performance metrics which it uses to make its cars even better. You see, FXX owners are essentially semi-official Ferrari test drivers, who provide useful data to Ferrari in return for getting to unleash one of the wildest Ferraris ever to ever roll out of Maranello on private race days. Sharing some parts and construction with the Enzo, there\u2019s a familiar resemblance, but the FXX\u2019s 789-horsepower V12 and incredible handling (the FXX can pull far more than one lateral G on the skidpad) are head-and-shoulders above even the Enzo\u2019s incredible performance. Not street legal and not homologated for racing use, the only place you can truly appreciate the FXX without an invitation from Ferrari is in Forza 4.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fferrari-fxx-evoluzione.png?alt=media&token=fabc504b-7b1e-42b5-b357-83f465cf2d3f",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/7b/HOR_XB1_Ferrari_FXX.png"
   },
   {
@@ -745,7 +742,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Point the Ford GT\u2019s low-slung snout down the immortal Mulsanne Straight at the Circuit de la Sarthe, crack open the throttle, and as the supercharged 5.4-liter V8 begins to howl consider how well the GT embodies the spirit of the original Ford GT40 while existing as a modern supercar famous in its own right. When Enzo Ferrari snubbed Henry Ford II\u2019s attempt to buy the Italian company, instead of getting mad, Ford got even. The Ford GT40 was his answer, and with American ingenuity and muscle won the 24 Hours of Le Mans three times, infuriating Ferrari in the process. For Ford\u2019s 100-year anniversary, the new GT was developed in just 16 months by SVT Engineering with input from Carroll Shelby, pioneering new construction techniques in the process while at the same time distilling all of the gorgeous styling DNA of the original into a contemporary design masterpiece. Forget about all that and slide behind into the cockpit studded with race-inspired gauges and toggleswitches, and the GT\u2019s combination of breathtaking power and poise on the limits prove that it\u2019s a mid-engined monster that won\u2019t misbehave on the track.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fford-gt.png?alt=media&token=76f1132d-7d60-499c-823b-f2048f2894f9",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e1/HOR_XB1_Ford_GT_05.png"
   },
   {
@@ -761,7 +758,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Muscle",
     "description": "The 1965 Ford Mustang is part of the 'first generation' series, produced in America between 1964 to 1973. The GT featured a V8 engine, grille-mounted fog lamps, rocker panel stripes, and disc brakes.The instrument gauge panel was also upgraded and featured a five dial layout. [1] 1969 was the last year for the GT model. ",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fford-mustang-gt-1965.png?alt=media&token=a4b03eff-eef4-4b60-bc20-b4c111852d54",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/0f/HOR_XB1_Ford_Mustang_65.png"
   },
   {
@@ -777,7 +774,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Muscle",
     "description": "For ten long years, the last Mustang carried the pony car torch for Ford. By 2005, the long-in-the-tooth car was finally relieved of duty by the new, fifth generation car\u2014a vast improvement. However, they didn\u2019t throw out the Mustang\u2019s long history and legendary image\u2014in fact, the new car\u2019s profile and proportions are closer than ever to the original idea of the Mustang, particularly visible in the grille with inset driving lights. Sit in the cockpit and the gauge cluster, with large twin pods for the tachometer and speedometer, recall the best parts of Mustangs of the past while being thoroughly modern. The same goes for the drivetrain; while still utilizing a live rear axle, an advanced Panhard rod setup with three trailing links keep the axle located and well-behaved, such that it would be hard to tell from behind the wheel that it\u2019s not independently sprung out back. The same goes for the engine\u2014there\u2019s nothing revolutionary about the 4.6-liter \u201cModular\u201d V8 with new, big-valve heads, but its prodigious power figures (300 horsepower and 315 ft-lbs. of torque) make it clear that the Mustang GT can perform. It\u2019s the perfect update to a classic icon of American performance, and it\u2019s also a blast to drive.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fford-mustang-gt-coupe.png?alt=media&token=1ff05578-e2cb-4514-a3ca-785fd1d370b6",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/b/bb/MOT_XB360_Ford_Mustang_GT.png"
   },
   {
@@ -793,7 +790,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "This 500-horsepower pony car will give the best the bow-tie has to offer a run for its money. The GT500 takes a lump of pig iron, tops it off with the heads from the Ford GT, and runs a supercharger. The resultant whine of the blower is a sumptuous treat alone. Add enough torque to give your stomach muscles a workout at each stoplight and you begin realize the potential of this lovely beast. When the Shelby name is emblazoned on a car, that alone tells you it's something special.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fford-mustang-shelby-gt500.png?alt=media&token=ac469970-5a56-4d3d-9678-48da3afae7c2",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c0/MOT_XB360_Ford_Shelby_10.png"
   },
   {
@@ -809,7 +806,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "If you want to see headlights disappear from your rear view mirror with extreme prejudice, the Gumpert Apollo S will do just fine. It\u2019s unique, fast and oozes cool from its wide stance, shapely form, and a sound that will make the hair rise on your back.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fgumpert-apollo-sport.png?alt=media&token=d6cad976-6c13-4e90-b692-3edd31f17dd8",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/77/HOR_X360_Gumpert_Apollo_10.png"
   },
   {
@@ -825,7 +822,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "SUV",
     "description": "The Hummer owes as much to actor and former Governor of California Arnold Schwarzenegger as it does to its militarized predecessor, the High Mobility Multipurpose Wheeled Vehicle. While the capable Humvee\" proved itself in the Desert Storm conflict, Schwarzenegger and others loudly campaigned for a civilian version to be sold to the public. The two events pushed the Hummer into production, and its success brought it to the attention of General Motors, who produced the original Hummer as the H1. The Alpha is an improved H1, ditching the molasses-slow GM diesel for a much quicker (by comparison) Duramax intercooled turbodiesel. The swap adds a much-needed 95 horsepower, giving the H1 Alpha a reasonable 13-second run to 60 mph. While it won\u2019t terrify any sportscar in a drag race, that\u2019s enough power to make the H1 Alpha a much more livable on-road proposition. 2006 was the last year for the H1, while the rest of the Hummer brand soldiered on for a few more years before off-roading into the sunset in 2010.\"",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fhummer-h1.png?alt=media&token=e4a1e844-d56d-408a-8b80-6eb519f89630",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e5/MOT_XB1_Hummer_H1.png"
   },
   {
@@ -841,7 +838,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Tourer",
     "description": "When you have a good thing going, it\u2019s best not to mess with it. Jaguar took an extremely successful formula from their D-Type racers\u2014a big inline six cylinder stuffed will advanced engineering\u2014and slipped inside a lithe form styled by aerodynamicist Malcom Sawyer. But while the D-Type was designed to race, the E-type was intended to wow, and when Jaguar pulled the wraps off the car in 1961, Geneva show-goers on hand rushed to order the car. The result was that Jaguar was swamped with more orders than they could fill. In retrospect, that\u2019s not surprising, because for the equivalent of the price of a mid-level executive sedan, buyers of the E-type were treated to what was essentially a supercar by the standards of the time. A complicated new fully independent rear suspension makes the E-type quite nimble (it was so successful that Jaguar used the design for decades), and the powerful 3.8-liter inline six makes the coupe considerably faster than contemporary car in its price range. The original E-type, the S1, became an enduring symbol of the zenith of the British auto industry, and one of the most iconic Jaguars ever. All of the history and accolades shouldn\u2019t obscure the fact that the E-type is also quite enjoyable to drive\u2014in particular, nothing else on the road sounds quite as sweet as the burble of a DOHC Jaguar six.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fjaguar-e-type-coupe.png?alt=media&token=d36948f0-c87b-477b-bc65-839b3f064045",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/a/ae/HOR_XB1_Jaguar_E-type.png"
   },
   {
@@ -857,7 +854,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Jaguar\u2019s already hot XKR has gone in for the \u201cS\u201d treatment, and the result is a harder-edged cat that\u2019s better in nearly every respect. The 420-horsepower supercharged V8 and lightweight aluminum construction are the same\u2014and that\u2019s good news, as the XKR-S can reach 60 mph in the low four-second range. Using that massive performance potential as a base, Jaguar set about improving the driving dynamics by revising the suspension significantly. Peer underneath and you\u2019ll find the expected stiffer springing, but Jaguar\u2019s also increased the camber and dialed in stiffer caster rates for more responsive handling. At the same time, the XKR-S is shod with larger, lightweight rims and unique styling elements such as the rear decklid spoiler and rear diffuser tray. The result is a noticeable increase in cornering ability and plantedness. With just 200 produced, and only for the European market, an XKR-S is a rare but heart-pounding ride.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fjaguar-xkr.png?alt=media&token=a1145b7f-256d-45a0-9212-59d4a60ce160",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/1/10/HOR_XB1_Jaguar_XKR-S_12.png"
   },
   {
@@ -873,7 +870,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "SUV",
     "description": "The history of high-performance SUVs isn\u2019t very long, but the successful ones have been triumphs of engineering over the SUV\u2019s unpromising dynamics. Of all that have made it past the drawing board into production, few are as good as the Grand Cherokee SRT8. Perhaps that\u2019s not surprising\u2014the original Grand Cherokee was a seriously fast vehicle, and not just for an SUV. So when the SRT team set to work on the third generation vehicle, the groundwork was already there. In addition, they had access to the 6.1-liter Hemi, one of the greatest modern performance engines around and a staple of the SRT lineup. Now, it\u2019s easy to imagine the Grand Cherokee SRT8 as a one-trick pony, quick in a straight line but bumbling in a corner. While the speed is certainly there (60 mph flashes by in less than five seconds), the Jeep\u2019s likely to surprise you when the going gets twisty, because their engineers massaged the suspension, fitted much larger brakes, and stuffed massive rubber under the already arched fenders. And with the revised front air dam and the rear bumper (sporting massive center-exit exhaust pipes), no one\u2019s going to mistake this for a normal SUV.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fjeep-grand-cherokee-srt8.png?alt=media&token=6c4335bb-eb30-49bb-84c6-60f4014f78c0",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/3/31/MOT_XB1_Jeep_Grand_09.png"
   },
   {
@@ -889,7 +886,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "The Swedes know how to make your heart thump, whether it\u2019s huge bass in your face or two-seat roadsters that burn past 60 mph in less than three seconds. Koenigsegg takes its own approach to building some of the finest supercars in the world. The CCXR\u2019s presence is awe-inspiring, lighting up the highway with 1,000 horsepower available for your heavy foot. That\u2019s prime time!",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fkoenigsegg-ccxr-edition.png?alt=media&token=399e27fa-d9a0-4bb3-a8cf-bd4778d2a5a8",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/a/a2/HOR_X360_Koenigsegg_CCX-R.png"
   },
   {
@@ -905,7 +902,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "Just being in the presence of an Aventador is enough to make one feel regal. To drive one is an experience that ranks closely with finding Elvis and winning the lottery... simultaneously. The car exudes of sensual power, drop dead beauty, and speed-fueled desire. The Aventador is everything an exotic car should be.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flamborghini-aventador-lp700-4.png?alt=media&token=383f22e5-d7f2-49a6-9a21-e903feb33072",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/5/56/HOR_XB1_Lambo_Aventador.png"
   },
   {
@@ -921,7 +918,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "You don't need to be Don Johnson to appreciate the utterly radical nature of the Countach. There\u2019s nothing quite like arriving in a car that gave way to the term \u201cLambo doors.\u201d And there is certainly not much like driving a car that looks and sounds like a jet fighter.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flamborghini-countach-5000-quanttrovalvole.png?alt=media&token=547afc55-9a69-468e-86f0-86de4fb278f3",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/03/HOR_XB1_Lambo_Countach.png"
   },
   {
@@ -937,7 +934,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "No mistaking, this is the longest name of any car of all time and it is bestowed upon a ride worthy of such a mouthful. Never before has a Lamborghini taken all-wheel drive and made it so integral, so well managed that you don\u2019t even know it\u2019s there until it\u2019s the only thing holding you to the road.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flamborghini-gallardo-lp-570-4-superleggera.png?alt=media&token=ddeaa2b7-4fad-4498-a809-a9e1da2cc679",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f6/HOR_XB1_Lambo_Gallardo.png"
   },
   {
@@ -953,7 +950,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "Hatchback",
     "description": "An F1 car for rally is one way to classify this robust, any condition, any surface racer. From a distance it resembles its distant, much milder, yet still capable cousin the Lancia Delta. Underneath, the bloodline is pure purpose-built racecar. A supercharger and a turbocharger lay rubber from all four wheels; try not to choke on its dust.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flancia-delta-hf-integrale-evoluzione.png?alt=media&token=9bc5f45a-ae52-48fe-9929-d95034d7c30b",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e7/HOR_XB1_Lancia_Delta_92.png"
   },
   {
@@ -969,7 +966,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "SUV",
     "description": "There have only been three Range Rovers since the model\u2019s 1970 introduction, and each generation has added refinement and power to already sophisticated designs. The third generation Range Rover retains all of the off-road prowess that has made Range Rover a legendary name, so you don\u2019t need to cover it in mud or park it sideways on a mountain to appreciate it. That\u2019s because this Rover is one beautiful SUV: the head- and taillights are shiny and intricate, side-gills grace the flanks, and the interior is a combination of classic Land Rover cues and fine wood and leather. Thankfully, this Range Rover also has a little secret under the hood\u2014a compressor that bumps horsepower up to a healthy 400, with plenty of torque on hand. All told, this supercharged V8 pulls the big Rover to 60 mph in a respectable 6.4 seconds. And thanks to a highly sophisticated air suspension system, road manners are superb, so it\u2019s just as comfortable cruising through the urban jungle as it is flying over a dusty savanna on safari.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fland-rover-range-rover-sport-supercharged.png?alt=media&token=1a5d6e9d-1a62-483c-b8d6-8f7df01afbe6",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/a/a2/MOT_XB360_Land_Rover_08Fix.png"
   },
   {
@@ -985,7 +982,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Track",
     "description": "The 2-Eleven is by any standard an extreme car. In the United States (and likely other jursidictions), it\u2019s so extreme it can\u2019t be driven on the street, and lives only on racetracks (where it must be admitted it is most at home). However, in Lotus\u2019 home market, for a small fee you can have Lotus equip the 2-Eleven for road use with lights, mirrors, and the like. That being said, it takes a strong nerve to drive this minimalist car, with no top, windscreen, or amenities like a carpet or radio, on the road. In particular, the car\u2019s unique qualities might be a hindrance too, as the 2-Eleven single-handedly seeks to redefine \u201cextreme performance.\u201d Weighing just 1,650 lbs., and with 251 horsepower courtesy of a supercharged 1.8-liter motor, the 2-Eleven is superlative in virtually every performance metric\u2014despite technicalities, the 2-Eleven is truly a racecar. It\u2019s also a worthy successor to its namesake, the original Lotus 11, a similarly light and powerful car for its day.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flotus-2-eleven.png?alt=media&token=a42c7624-493a-4452-9730-f8ffe923424a",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/73/HOR_XB1_Lotus_2-Eleven.png"
   },
   {
@@ -1001,7 +998,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "One of the simplest but most attractive of all the \u201cwedge\u201d cars of the 1970s is the original Lotus Esprit, and the second series Turbo manages to refine the basic shape while adding a healthy dose of performance. Much more than simply the addition of a turbocharger to the 2.2-liter Lotus Type 912 four-cylinder motor, the Esprit Turbo actually represents an official redesign, conducted by original designer Giorgetto Giugiaro, that includes such revisions as new facias front and rear, larger side skirts, and the side-mounted NACA ducts to provide cooling air to the engine. Under the skin, an entirely new Y-frame chassis not only increases structural rigidity, it is also designed to accommodate the V8 engine that wouldn\u2019t debut for another 16 years\u2014a forward-looking move on the part of Lotus. Handling is what you\u2019d expect from a Lotus\u2014extremely competent and entirely unflustered by mid-course corrections\u2014and power improves to 205 horsepower, a respectable figure for the time. And in case anyone could possibly mistake what they\u2019re looking at when this Lotus roars by, appropriately period graphics unambiguously proclaim to onlookers \u201cTURBO ESPRIT.\u201d Subtle, it\u2019s not.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flotus-espirit-turbo.png?alt=media&token=9a860e17-fa29-45bb-987c-9ea0a2c98ff0",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/9/98/MOT_XB360_Lotus_Esprit_80.png"
   },
   {
@@ -1017,7 +1014,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Can one sportscar have it all? The Evora comes awfully close to perfection, offering famous Lotus handling and performance in a refined, modern package. Lotus\u2019 lightweight manta is on display in the Evora\u2019s lightweight bonded aluminum skeleton, a high-tech way to achieve the telepathic driver feedback Lotus has always been known for. It\u2019s also more livable than Lotus\u2019 smaller offering, making it a high-performance sportscar that you don\u2019t have to be a contortionist to squeeze into. Not that the Evora\u2019s gone soft; forward motivation is briskly provided by a refined V6 sourced from Toyota, recalibrated for high performance and making a healthy 276 horsepower. The sophistication extends to the styling, which is sophisticated and restrained, while at the same time looking fast without resorting to lots of boy-racer bobbles and add-ons. And don\u2019t forget that the sleek lines are wrapped around both a mid-mounted engine and a pair of rear seats, accomplishing the incredibly difficult task of being a useable 2+2 that looks fantastic. You really can have it all with an Evora.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Flotus-evora.png?alt=media&token=c3e24e50-df42-4d2a-bc4a-1a4f3f84329c",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d6/MOT_XB360_Lotus_Evora_09.png"
   },
   {
@@ -1033,7 +1030,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "When the last car your company produced was widely considered to be the greatest road car ever made, the McLaren F1, you have some big shoes to fill. While the F1 was designed to have no peers, the MP4-12C takes aim directly at the Italian and German competition with an innovative new all-carbon fiber chassis and a turbocharged V8 developed in-house at McLaren. Tuned for maximum low-end torque, the MP4 can bring all 442 ft-lbs. to bear at a low 2,000 RPM, which means the MP4 has rocketship launch characteristics. One look at the huge, deep side inlets and the high-mount exhaust bores should tell you the new McLaren means business. Lewis Hamilton thinks so; McLaren\u2019s ace F1 driver likes the MP4-12C so much he appears as the voice of the car in Pixar\u2019s computer-animated film Cars 2.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmclaren-mclaren-mp4-12c.png?alt=media&token=e82aa846-8230-4b9c-ac86-1f630a00a8ad",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d8/HOR_XB1_McLaren_12C.png"
   },
   {
@@ -1049,7 +1046,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Tourer",
     "description": "The Mercedes-Benz 300SL represented such a huge leap forward in production car design, technology, and style that it is difficult to imagine just how revolutionary it was upon its introduction. Considering how iconic it has remained, and how well-known the car\u2019s signature doors are even to non-enthusiasts, it certainly looks the part. Gullwing doors aside, the low coupe\u2019s rakish profile looked nothing like the dinosaurs it shared the road with\u2014all the more amazing considering how conventional most of Mercedes\u2019 aging designs were at the time. As attractive as the body shell, resembling the W194 racer that inspired it, it\u2019s what\u2019s under the skin that makes the 300SL so groundbreaking. The 3-liter inline six cylinder engine, while related to the unit in the large Type 300 sedan, benefitted from the development it saw in action in the W194, and sported a new cylinder head and mechanical fuel injection to produce more than 240 horsepower in road-going trim. Like the racer, the Gullwing also utilized tube-frame construction, part of which passed through where conventional doors would go, which explains the distinctive door arrangement. The \u201cSL\u201d part of the name stands for \u201cSport Leicht,\u201d or \u201csport light,\u201d and the regular Gullwing was very light\u2014but it could be made lighter by ordering the optional aluminum alloy body for a substantial fee. Speaking of substantial costs, the rare and beautiful Gullwing commands prices at auction that suit its position as the ultimate Mercedes road-going coupe.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-300-sl-gullwing.png?alt=media&token=1bbd9856-fd1e-4ce3-8030-1489805137d3",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/75/HOR_XB1_M-B_300_SL.png"
   },
   {
@@ -1065,7 +1062,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "SUV",
     "description": "The ML-Class is all grown up. The second generation ML (that\u2019s a W163 to you Mercedes fans) is one slick-looking SUV, and in AMG form the ML 63 is also one very fast truck. Behind the huge Mercedes tri-pointed star in the grille is the AMG 6.2-liter V8, entirely constructed by AMG. Plant the throttle and 510 horsepower shoves you hard into the comfortable driver\u2019s bucket seat. The speedometer swings around with frightening rapidity, and if you have a stopwatch handy you\u2019ll find that 60 mph flashes by in 4.5 seconds\u2014that\u2019s nearly as fast as a base model Chevrolet Corvette C6. Roadholding is also on the astonishing side of good\u2014a full 0.8 lateral Gs on your typical skidpad\u2014thanks to typical AMG suspension improvements. AMG hasn\u2019t ignored the already stylish exterior, fitting aerodynamic and visual add-ons like the larger alloy wheels filling up the nicely flared wheel arches. If you like going fast, but have a ton of stuff and like the added traction of all-wheel drive, then you can rest assured that the ML 63 AMG can do it all.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-ml-63-amg.png?alt=media&token=989ec446-4d9d-432c-9402-1e9e78009505",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/0e/MOT_XB1_M-B_ML63.png"
   },
   {
@@ -1081,7 +1078,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "If AMG\u2019s manic creations simply aren\u2019t enough for you, there are a very small number of models that have been improved to Black Series specification, and the SL 65 joins the ranks in 2009. Starting with the standard SL 65 AMG, already potently endowed with a twin-turbocharged V12, AMG mainly focuses on weight reduction. The folding hardtop and metal fenders, front bumper, and trunk are ditched for units made of carbon fiber composite, saving more than 200 lbs. (a lot of which was in the roof, so the center of gravity is lowered somewhat). Engineers also managed to enhance engine output by almost 60 horsepower, for a total of 661 horsepower (although torque, while still immense, is unchanged at 738 ft-lbs.). Performance is about what you\u2019d expect given the modifications to the SL-Class, with a 0-60 time of well under 4 seconds and a top speed well in excess of 215 mph. It\u2019s not a coupe for the faint-of-heart, but if you\u2019re looking for a DTM-style driving experience without having to wear a fireproof suit every time you drive it, perhaps the SL 65 AMG Black Series is your car.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-sl-65-amg-black-series.png?alt=media&token=2ffb1de5-fa1e-45c4-8b15-04eb9841a7c9",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/2/28/HOR_XB1_M-B_SL_65.png"
   },
   {
@@ -1097,7 +1094,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Roadster",
     "description": "It might be a tired old phrase, but the SLK 55 AMG looks fast standing still. To be accurate, it looks fast wherever it is\u2014because this convertible is, indeed, very fast. The SLK isn\u2019t a particularly large car, so the fact that it packs an AMG-massaged 5.4-liter V8 under the prominent F1-inspired \u201cbeak\u201d is rather amazing. 355 horsepower is channeled back to the rear wheels, squeezed under subtly flared fenders. The rear decklid is highlighted by a an understated lip spoiler, and as you follow the curve of the trunklid down past the AMG badge you\u2019ll see the quad chromed exhaust tips where the bellowing engine exhales. Just like any other SLK, the AMG version enjoys a luxurious interior and a folding hardtop, but the bodykit (particularly noticeable, and handsome, is the revised front bumper) and wheels are unique to the AMG model. Thankfully, the much larger engine comes with suitably improved braking and suspension, allowing the SLK 55 AMG to carry on appearances by stopping and changing direction without drama\u2014that is, looking fast, wherever it might be.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-slk-55-amg.png?alt=media&token=e67dd0e1-cec6-4d62-93eb-546e97364c94",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/8/85/HOR_XB1_M-B_SLK_55.png"
   },
   {
@@ -1113,7 +1110,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "How many cars look like they\u2019re going 200 mph standing still? When Mercedes teamed up with racing partner McLaren to build a no-holds-barred supercar, the result was phenomenal. Whether you consider the sinister grilles extracting air from the front wheel arches, or the carbon-fiber and aluminum construction that allow the big coupe to be incredibly light and strong, it is clear the SLR McLaren was built for one purpose: to make reaching its 207 mph terminal velocity look easy. Actually, make that two purposes, because if you blast through a few corners to get the brakes heated up, you\u2019ll notice the turbine-inspired alloy wheels illuminated by the orange glow of superheated carbon-ceramic brake rotors that are capable of hauling the SLR down from astonishing speeds without fading. Crack a window to listen to the shriek of the twin-rotor supercharger feeding cold air to the big V8, and then close it to cruise in sporting comfort. It\u2019s a fitting homage to the original Mercedes 300 SLR race cars that made famous racers like Stirling Moss unbeatable in the 1950s.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-slr-coupe.png?alt=media&token=d648bc13-7053-4762-88d1-748fdb79464d",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e4/MOT_XB1_Mercedes_SLRfix.png"
   },
   {
@@ -1129,7 +1126,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "The SLR Stirling Moss is the sort of stuff motorsport enthusiasts\u2019 dreams are made of. There\u2019s the retro design elements that pay tribute to the Mercedes-Benz 300 SLR of the 1950s, a beautiful and very fast racer that racked up enough wins at classic venues like the Targa Florio and Mille Miglia to secure its legendary status. Some of these wins were at the hands of Sir Stirling Moss, himself a legend in his own lifetime, and whose name only makes this car a more fitting tribute to the heritage of Mercedes motorsport. Of course, as a variant of the preexisting SLR McLaren, performance is immense\u2014the supercharged V8 produces 650 horsepower in this application, and that gives the SLR Stirling Moss the capability to easily exceed 200 mph. What\u2019s not easy is acquiring one, as just 75 were produced at seven-figure prices.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-slr-mclaren-stirling-moss.png?alt=media&token=b1e44b4d-acf9-435a-a99b-d4402218e501",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/05/MOT_XB360_Merceses_Stirling.png"
   },
   {
@@ -1145,7 +1142,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Tourer",
     "description": "While Mercedes doesn\u2019t refer to the new SLS AMG as the \u201cGullwing\u201d, it is absolutely the return of the famed automotive icon. With more than 560 horsepower, the SLS AMG is a track tamer nearly without equal, and its classic, sophisticated lines will attract car lovers of every stripe.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fmercedes-benz-sls-amg.png?alt=media&token=11260e3d-56b5-4d00-9d39-8b06d7b09196",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/02/HOR_XB1_M-B_SLS.png"
   },
   {
@@ -1161,7 +1158,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The Z-car formula has never been complicated. All it takes is a lusty six cylinder tucked under a long hood, with power going to the rear in the way Mr. K, father of the original 240Z, intended. The 370Z improves on this recipe for success by being smaller, lighter, wider, and more powerful than the 350Z that came before, incorporating new, lightweight aluminum body panels and a larger 3.7-liter V6. It also is the first car in the world to debut a nifty piece of new technology\u2014SynchroRev Match, which automatically blips the throttle on downshifts for perfect rev-matching every time. One look at the 370Z\u2019s tighter lines, featherweight forged wheels, and the menacing sharks\u2019 tooth head- and taillights will tell you that the new Z is a thoroughly modern driver\u2019s dream with a legendary name. It\u2019s also the perfect canvass to create a custom drift monster: try swapping in the Skyline\u2019s twin-turbo inline six and perfecting your drift technique.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fnissan-370z.png?alt=media&token=b5d73a20-b425-492f-98de-c78f5378181e",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/70/HOR_XB1_Nissan_370Z.png"
   },
   {
@@ -1177,7 +1174,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "More refined than ever and with even more power to boot, this is the latest model of the Japanese supercar that fans affectionately dub \u201cGodzilla.\u201d The gaping V-Motion grille is the centerpiece of a new front-end look and also provides better engine cooling. Below, the new lip spoiler and bumper enhance what is already one of the most aggressive looks on the road. All wheel drive, massive twin turbos, and so much technology keeping power to the pavement give the GT-R an advantage on any surface. The GT-R may be Nissan\u2019s halo model, but it is no angel.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fnissan-gt-r.png?alt=media&token=4880ce14-cfc5-4e1b-838c-8b06d4c5f902",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/3/36/HOR_XB1_Nissan_GT-R_17.png"
   },
   {
@@ -1193,7 +1190,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "As the penultimate edition of the \u201cR34\u201d series Skyline GT-R, and in fact, as one of the last of the traditionally inline-six powered Skylines, the V-Spec II is destined to be a collectible. Let\u2019s hope that this doesn\u2019t mean that existing models are parked in garages and never driven, because driving is exactly what Nissan intended this GT-R to do. The V-Spec II (the \u201cV\u201d stands for \u201cvictory,\u201d by the way) comes with all of the goodies that the original V-Spec had, but it\u2019s even harder-edged thanks to increased stiffness and lighter weight (primarily due to a special carbon fiber hood, spotted at a distance by the small NACA duct). The RB26DETT engine will be familiar to Skyline fans, but only the very fanatical will know offhand that the ATTESA E-TS all-wheel drive system is actually the \u201cPro\u201d version, with an active limited-slip differential that splits torque laterally if necessary. Externally, small \u201cV-Spec II\u201d badges and a large \u201cbi-plane\u201d rear wing differentiate this Skyline from lesser models. With well over 300 horsepower, the GT-R is not only quick, it\u2019s very much so\u2014particularly in poor traction situations where the all-wheel drive system comes into the fore.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fnissan-skyline-r34-gt-r.png?alt=media&token=6f996435-2c64-4a22-bce1-9ad13fb3ee97",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/7/71/HOR_XB1_Nissan_GT-R_02.png"
   },
   {
@@ -1209,7 +1206,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Supercar",
     "description": "Pagani hand crafts some of the finest super cars in the world. For those who want to let the wind blow back their hair at up to 217 mph, the Cinque Roadster is the perfect choice. Built of carbon-titanium\u2014that\u2019s carbon fiber weaved with titanium strands\u2014the Cinque is lightweight and strong. Thanks to the massive intake\u2019s location just above the cockpit, the rush of air combined with the bespoke Iconel and titanium exhaust bellows a glorious V12 chorus. Only five were built, so driving one in Forza Horizon will be the closest most will ever come to the real thing.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fpagani-zonda-cinque.png?alt=media&token=5daaf241-3e0f-471d-8328-7bf372e2b158",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/3/32/HOR_XB1_Pagani_Zonda_09.png"
   },
   {
@@ -1225,7 +1222,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The Ruf RGT-8 has been lightened from nose to tail. To even the strictest of enthusiasts, this is not sacrilege, this is improving on perfection. This Ruf is a true supercar, with an ultra-low center of gravity and off-the-charts speed potential.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fruf-rgt-8.png?alt=media&token=6abbcfd5-7f34-4207-84f8-d25907233356",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/b/b7/HOR_X360_RUF_RGT-8.png"
   },
   {
@@ -1241,7 +1238,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The Rt 12 S is an incredible supercar, but the Rt 12 R is all the S is\u2014and more. The addition of all-wheel drive and nearly 50 more horsepower are part of the story, but you might be surprised to realize that the R also weighs about 40 lbs. less. Starting with the traditional body-in-white, RUF completely rebuilds or replaces the rest of the componentry, and the result is stunning\u2014730 horsepower and 693 ft-lbs. of torque, enough to rival all but the most extreme supercars. Partially that\u2019s due to the 3.8-liter twin-turbocharged \u201cboxer\u201d six, and partly that\u2019s due to the nearly supernatural ability of the R to translate that power into forward momentum using the all-wheel drive system. 0-60 times are nearly irrelevant; they\u2019re in the low 3-second range, or in other words, rocket-ship quick. The limits of adhesion are nearly impossible to reach on a regular road\u2014it takes a serious roadcourse to take the R to its limits. That the R is capable of being registered for road use (in some parts of Europe, at least), is perhaps the strangest part of the equation considering its manic performance. It should be noted, though, that while the R can do things that few cars can equal, it does so precisely and without drama; a skilled driver can use this car as a finely tuned racing tool.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fruf-rt-12-r.png?alt=media&token=f1fd6711-e53b-4761-9a08-24018c5951fc",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d8/HOR_X360_RUF_Rt.png"
   },
   {
@@ -1257,7 +1254,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "If there\u2019s one company that knows a thing or two about speed, it\u2019s Saleen. They\u2019ve been modifying Mustangs and other Ford products since 1983, and they\u2019re the minds behind the unruly Saleen S7. The 2010 Saleen S5S Raptor brings something to the plate that the S7 lacked--drop-dead gorgeous sheetmetal. The Raptor\u2019s designers channeled the spirit and aggression of iconic Can-Am racecars when penning the shape. Those stunning looks are backed up by what Saleen knows best\u2014a 5.0-liter supercharged Ford V8, which is capable of delivering a rubber-churning 650 horsepower, all while sipping eco-friendly E85 ethanol blended fuel. Who says you need to cross the pond to find a supercar? The S5S Raptor is a made-in-America exotic that looks the part.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fsaleen-s5s-raptor.png?alt=media&token=dbb00032-c7c6-4f4e-86c7-e261be572c35",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/4/41/HOR_XB1_Saleen_S5S.png"
   },
   {
@@ -1273,7 +1270,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "Driving the Saleen S7 is an unforgettable experience. With enough room to run and a heavy throttle, the S7 launches hard and gathers up speed surprisingly quickly\u2014even if you expect that with 575 horsepower it should take off in a hurry, the raw and unrestrained acceleration is staggering (the quarter mile is decimated in just under 12 seconds at 120 mph). While it looks fast, it\u2019s also huge\u2014no other two-seat car offered at the time is so long or wide. That size doesn\u2019t necessarily mean that the S7 packs a lot of weight, as it utilizes an expensive mix of carbon fiber and aluminum honeycomb materials to keep mass down. Trick suspension is relatively soft at low speeds for additional comfort, but firms up when the S7\u2019s downforce hunkers the car down at speed. It\u2019s a combination that in race trim as the S7R has been very successful in sportscar racing. Overkill for the street, perhaps, but there are few cars as ferociously rewarding to drive on a track than the S7.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fsaleen-s7.png?alt=media&token=e43c86b3-0911-41cb-a7c9-3d447f235102",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/6/6d/HOR_XB1_Saleen_S7.png"
   },
   {
@@ -1289,7 +1286,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "Sedan",
     "description": "The 2005 WRX Sti [sic] saw minor interior upgrades over the 2004 version. It is powered by the turbocharged and intercooled 2.5-liter [sic] flat-four that cranks out more than 300 horsepower [sic]. Subaru\u2019s invincible all-wheel drive system provides grippy traction on any surface.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fsubaru-impreza-wrx-sti.png?alt=media&token=841b291b-43a7-40d6-ae9d-6b03ef9ca4d9",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/8/84/HOR_XB1_Subaru_Impreza_05.png"
   },
   {
@@ -1305,7 +1302,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The Toyota Supra always towed a fine line between Japanese luxury and performance. It ticked all the boxes that JDM fans could list and it found fame and fortune on the big screen. At the heart of this beautiful, easily able to turn beast, is the JDM lover\u2019s heartthrob, the 2JZ-GTE. It\u2019s a motor that by itself is the stuff of legend and with a little massaging can readily generate tons of sonorous horsepower. What we have here is the top of the line model from the last year of production (in the U.S.). The fourth generation of the Supra was unmatched in appeal and resale values have soared. In an age where RWD luxury sport coupes from Japan are a dying breed, the Supra RZ lives on to stand tall against anything that dares to step to its considerable gait.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Ftoyota-supra-rz.png?alt=media&token=669369e5-9959-4b77-9e11-4fe990c7502e",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/a/aa/HOR_XB1_Toyota_Supra_98.png"
   },
   {
@@ -1321,7 +1318,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "The Cerbera Speed 12 can reach a top speed of 240 mph (386 km/h). Thanks to a 800 hp (597 kW) engine, it can reach 60 mph (97 km/h) in 3.5 seconds. ",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Ftvr-cerbera-speed-12.png?alt=media&token=9040caf3-9c2e-46de-af89-07bc40422e7e",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/8/87/HOR_XB1_TVR_Cerbera.png"
   },
   {
@@ -1337,7 +1334,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Coupe",
     "description": "You wouldn\u2019t want to come across the Sagaris unexpectedly in a dark alley. One look at the bonkers side-exit howitzers poking out of the rear diffuser tray make it clear the Sagaris would just as likely mug you as carry you to 150 mph on a tsunami of torque in a ludicrous 20 seconds. TVRs have always marched to the manic beat of a different drummer, and the Sagaris fits the mold by being just as wild and untamed as its almost comically aggressive looks suggest. Yet it\u2019s also one of the most balanced TVRs ever made, which is more a statement about how unruly Blackpool\u2019s previous models have been. Step inside its alien-spacepod interior and fire up TVR\u2019s own 4-liter inline six, which TVR cryptically says makes \u201cthree-hundred-and-a-lot\u201d horsepower, and prepare for the fury. Since the Sagaris weighs next to nothing with a fiberglass body and diminutive proportions, the big six is enough to dispatch cars with twice as many cylinders. The real question is, can you keep the Beast of Blackpool on the track long enough to find out?",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Ftvr-sagaris.png?alt=media&token=13777ea5-1482-480f-a1ad-40067926abde",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/0/0e/HOR_XB1_TVR_Sagaris.png"
   },
   {
@@ -1353,7 +1350,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 2,
     "body": "Hatchback",
     "description": "Available only in Europe this could be the sportiest of Golf\u2019s to date. Tons of horsepower from its 2.0 liter turbo make it a kick in the pants when pushed, and it can be pushed all the way up to a governor mandated 155 mph. In essence the Golf R has taken over for the R32 and being all wheel drive, it can be drifted or driven with civility.",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fvolkswagen-golf-r.png?alt=media&token=14beee0e-496e-4a8e-aa85-e39aedd212b0",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/5/52/HOR_XB1_VW_Golf_14.png"
   },
   {
@@ -1369,7 +1366,7 @@ export const TEMPORARY_HARDCODED_DATA: readonly Vehicle[] = [
     "capacity": 4,
     "body": "SUV",
     "description": "The Touareg R50 was launched at the 2007 Australian International Motor Show as the third Volkswagen \"R\" performance model after the Volkswagen Golf R32 and Passat R36.  The \"R50\" naming comes from its engine displacement of five liters. It was offered with a 5.0-liter V10 diesel engine that produces 346 hp (258 kW) and 626 ft\u00b7lb (849 N\u00b7m) of torque, pushing the car from 0 to 60 mph (97 km/h) in around 6.6 seconds. ",
-    "image": PLACEHOLDER_IMAGE,
+    "image": "https://firebasestorage.googleapis.com/v0/b/shopping-cart-5f766.appspot.com/o/images%2Fvolkswagen-touareg-r50.png?alt=media&token=1c4b3952-8b1c-4014-8c3e-56a54edb2901",
     "imageSrc": "https://static.wikia.nocookie.net/forzamotorsport/images/f/fb/HOR_XB1_VW_Touareg.png"
   }
 ];
