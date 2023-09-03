@@ -1,7 +1,9 @@
 import {
   MouseEvent,
   PropsWithChildren,
+  TransitionEvent,
   useContext,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -13,10 +15,21 @@ import { Spinner } from "./components/Spinner.tsx";
 
 function ModalOverlay(props: PropsWithChildren<Empty>) {
   const { children } = props;
+  const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsOpen(true);
+  }, []);
 
   function dismiss(event: MouseEvent) {
     if (ref.current !== event.target) return;
+    setIsOpen(false);
+  }
+
+  function back(event: TransitionEvent) {
+    if (ref.current !== event.target) return;
+    if (isOpen) return;
     history.back();
   }
 
@@ -24,10 +37,13 @@ function ModalOverlay(props: PropsWithChildren<Empty>) {
     "fixed top-0 left-0",
     "h-screen w-screen",
     "grid place-items-center",
-    "bg-black/50"
+    isOpen && "bg-black/50",
+    "transition duration-150",
+    "[&>*]:transition [&>*]:duration-150",
+    !isOpen && "[&>*]:scale-90 [&>*]:opacity-0"
   );
   return (
-    <div ref={ref} onClick={dismiss} className={classes}>
+    <div ref={ref} onClick={dismiss} onTransitionEnd={back} className={classes}>
       {children}
     </div>
   );
