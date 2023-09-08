@@ -1,4 +1,5 @@
 import { Outlet, Route } from "react-router-dom";
+import { CartContextProvider } from "./controller/contexts/CartContext.tsx";
 import { VehiclesContextProvider } from "./controller/contexts/VehicleContext.tsx";
 import { productLoader } from "./controller/loaders/product-loader.ts";
 import { CatalogView } from "./view/CatalogView.tsx";
@@ -8,9 +9,11 @@ import { ProductView } from "./view/ProductView.tsx";
 function App() {
   return (
     <VehiclesContextProvider>
-      <div className="select-none">
-        <Outlet />
-      </div>
+      <CartContextProvider>
+        <div className="select-none">
+          <Outlet />
+        </div>
+      </CartContextProvider>
     </VehiclesContextProvider>
   );
 }

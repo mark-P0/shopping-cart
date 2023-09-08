@@ -1,15 +1,24 @@
-import { useContext } from "react";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehicleContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
-import { C, formatPrice } from "../utilities.ts";
+import { C, formatPrice, useNullableContext } from "../utilities.ts";
+import { ModalOverlay } from "./components/ModalOverlay.tsx";
 import { Spinner } from "./components/Spinner.tsx";
 
-function NavBar() {
+function CartPreview({ onDismissEnd }: { onDismissEnd: () => void }) {
+  const { cart } = useNullableContext(CartContext);
+  const allProducts = useNullableContext(VehiclesContext);
+
+  const cartProducts = allProducts.filter(({ id }) => cart.has(id));
+
   return (
-    <nav>
-      <Link to="/">Solar Crown</Link>
-    </nav>
+    <ModalOverlay onDismissEnd={onDismissEnd}>
+      <aside className="h-2/3 w-2/3 bg-neutral-600">
+        {JSON.stringify(cartProducts)}
+      </aside>
+    </ModalOverlay>
   );
 }
 
@@ -62,7 +71,7 @@ function Product({ data }: { data: Vehicle }) {
 
 // TODO Read / React to `CatalogViewContext`
 function ProductList() {
-  const data = useContext(VehiclesContext);
+  const data = useNullableContext(VehiclesContext);
   if (data.length === 0) {
     return (
       <div className="grid place-items-center">
@@ -86,10 +95,23 @@ function ProductList() {
 function CatalogViewContext() {}
 
 export function CatalogView() {
+  const [isCartPreviewShown, setIsCartPreviewShown] = useState(false);
+
+  function showPreview() {
+    setIsCartPreviewShown(true);
+  }
+
+  function hidePreview() {
+    setIsCartPreviewShown(false);
+  }
+
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-3 p-6">
       <header>
-        <NavBar />
+        <nav className="flex justify-between">
+          <Link to="/">Solar Crown</Link>
+          <button onClick={showPreview}>Cart</button>
+        </nav>
       </header>
       <main className="h-full overflow-hidden grid grid-cols-[1fr_4fr] gap-3">
         <ProductListSettings />
@@ -97,6 +119,7 @@ export function CatalogView() {
       </main>
       {/* <footer><code>footer</code></footer> */}
       <Outlet />
+      {isCartPreviewShown && <CartPreview onDismissEnd={hidePreview} />}
     </div>
   );
 }

@@ -16,3 +16,5 @@ export type Vehicle = {
   image:         string;
   imageSrc:      string;
 }
+
+export type VehicleID = Vehicle["id"];

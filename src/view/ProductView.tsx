@@ -1,56 +1,22 @@
-import {
-  MouseEvent,
-  PropsWithChildren,
-  TransitionEvent,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehicleContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
-import { C, Empty, formatPrice } from "../utilities.ts";
+import { Vehicle } from "../model/vehicles.ts";
+import { C, State, formatPrice, useNullableContext } from "../utilities.ts";
+import {
+  ModalOverlay,
+  ModalOverlayContext,
+} from "./components/ModalOverlay.tsx";
 import { Spinner } from "./components/Spinner.tsx";
 
-function ModalOverlay(props: PropsWithChildren<Empty>) {
-  const { children } = props;
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsOpen(true);
-  }, []);
-
-  function dismiss(event: MouseEvent) {
-    if (ref.current !== event.target) return;
-    setIsOpen(false);
-  }
-
-  function back(event: TransitionEvent) {
-    if (ref.current !== event.target) return;
-    if (isOpen) return;
-    history.back();
-  }
-
-  const classes = C(
-    "fixed top-0 left-0",
-    "h-screen w-screen",
-    "grid place-items-center",
-    isOpen && "bg-black/50",
-    "transition duration-150",
-    "[&>*]:transition [&>*]:duration-150",
-    !isOpen && "[&>*]:scale-90 [&>*]:opacity-0"
-  );
-  return (
-    <div ref={ref} onClick={dismiss} onTransitionEnd={back} className={classes}>
-      {children}
-    </div>
-  );
-}
-
-function QuantityCounter({ minimumCt }: { minimumCt: number }) {
-  const [ct, setCt] = useState<number>(minimumCt);
+type QuantityCounterProps = {
+  state: State<number>;
+  minimumCt: number;
+};
+function QuantityCounter({ state, minimumCt }: QuantityCounterProps) {
+  const [ct, setCt] = state;
   const [isDecrementDisabled, setIsDecrementDisabled] = useState<boolean>(true);
 
   function decrement() {
@@ -83,9 +49,50 @@ function QuantityCounter({ minimumCt }: { minimumCt: number }) {
   );
 }
 
+type AddToCartButtonProps = {
+  product: Vehicle;
+  quantity: number;
+};
+function AddToCartButton({ product, quantity }: AddToCartButtonProps) {
+  const { addToCart } = useNullableContext(CartContext);
+  const { close: hideOverlay } = useNullableContext(ModalOverlayContext);
+
+  function addToCartAndHideOverlay() {
+    addToCart(product, quantity);
+    hideOverlay();
+  }
+
+  return (
+    <button
+      className="bg-black px-3 py-2 uppercase font-bold tracking-wider"
+      onClick={addToCartAndHideOverlay}
+    >
+      Add to Cart
+    </button>
+  );
+}
+
+type ProductToCartControlsProps = {
+  product: Vehicle;
+  minimumQty: number;
+};
+function ProductToCartControls({
+  product,
+  minimumQty,
+}: ProductToCartControlsProps) {
+  const [ct, setCt] = useState<number>(minimumQty);
+
+  return (
+    <footer className="flex justify-end gap-6">
+      <AddToCartButton product={product} quantity={ct} />
+      <QuantityCounter state={[ct, setCt]} minimumCt={minimumQty} />
+    </footer>
+  );
+}
+
 export function ProductView() {
   const productId = useLoaderData() as LoadedProductData;
-  const vehicles = useContext(VehiclesContext);
+  const vehicles = useNullableContext(VehiclesContext);
   const data = vehicles.find(({ id }) => id === productId);
   if (data === undefined) {
     return (
@@ -105,7 +112,7 @@ export function ProductView() {
     "bg-neutral-800"
   );
   return (
-    <ModalOverlay>
+    <ModalOverlay onDismissEnd={() => history.back()}>
       <article className="overflow-hidden w-3/5 h-3/5 grid grid-cols-[3fr_2fr] bg-neutral-700 rounded-xl">
         <figure className="grid place-items-center">
           <img src={image} alt="" />
@@ -127,12 +134,7 @@ export function ProductView() {
             </div>
           </header>
           <p className={descClasses}>{description}</p>
-          <footer className="flex justify-end gap-6">
-            <button className="bg-black px-3 py-2 uppercase font-bold tracking-wider">
-              Add to Cart
-            </button>
-            <QuantityCounter minimumCt={1} />
-          </footer>
+          <ProductToCartControls product={data} minimumQty={1} />
         </section>
       </article>
     </ModalOverlay>

@@ -4,13 +4,18 @@ import {
   doc,
   getDocs,
   getFirestore,
+  initializeFirestore,
+  persistentLocalCache,
   setDoc,
 } from "firebase/firestore";
 import { Vehicle } from "../vehicles.js";
 import { app } from "./app.js";
 
 /** Initialize Cloud Firestore and get a reference to the service */
-const db = getFirestore(app);
+// const db = getFirestore(app);
+const db = initializeFirestore(app, {
+  localCache: persistentLocalCache(),
+});
 
 const collectionPaths = ["products"] as const;
 type CollectionPath = (typeof collectionPaths)[number];
@@ -46,6 +51,8 @@ export async function addProduct(product: Vehicle) {
 }
 
 export async function readProducts(): Promise<Vehicle[]> {
+  console.time("readProducts");
   const products = await read("products");
+  console.timeEnd("readProducts");
   return products.map((productRef) => productRef.data() as Vehicle);
 }

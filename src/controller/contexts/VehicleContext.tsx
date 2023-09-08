@@ -3,9 +3,10 @@ import { readProducts } from "../../model/firebase/db.ts";
 import { Vehicle } from "../../model/vehicles.ts";
 import { Empty } from "../../utilities.ts";
 
-export const VehiclesContext = createContext<Vehicle[]>([]);
+export const VehiclesContext = createContext<Vehicle[] | null>(null);
 
-function useVehicles() {
+export function VehiclesContextProvider(props: PropsWithChildren<Empty>) {
+  const { children } = props;
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 
   useEffect(() => {
@@ -14,13 +15,6 @@ function useVehicles() {
       setVehicles(data);
     })();
   }, []);
-
-  return vehicles;
-}
-
-export function VehiclesContextProvider(props: PropsWithChildren<Empty>) {
-  const { children } = props;
-  const vehicles = useVehicles();
 
   return (
     <VehiclesContext.Provider value={vehicles}>
