@@ -5,7 +5,8 @@ import { Empty } from "../../utilities.ts";
 
 export const VehiclesContext = createContext<Vehicle[]>([]);
 
-function useVehicles() {
+export function VehiclesContextProvider(props: PropsWithChildren<Empty>) {
+  const { children } = props;
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 
   useEffect(() => {
@@ -14,13 +15,6 @@ function useVehicles() {
       setVehicles(data);
     })();
   }, []);
-
-  return vehicles;
-}
-
-export function VehiclesContextProvider(props: PropsWithChildren<Empty>) {
-  const { children } = props;
-  const vehicles = useVehicles();
 
   return (
     <VehiclesContext.Provider value={vehicles}>
