@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
-import { C, formatPrice } from "../utilities.ts";
+import { C, formatPrice, useNullableContext } from "../utilities.ts";
 import { Spinner } from "./components/Spinner.tsx";
 
 function NavBar() {
@@ -62,7 +61,7 @@ function Product({ data }: { data: Vehicle }) {
 
 // TODO Read / React to `CatalogViewContext`
 function ProductList() {
-  const data = useContext(VehiclesContext);
+  const { vehicles: data } = useNullableContext(VehiclesContext);
   if (data.length === 0) {
     return (
       <div className="grid place-items-center">

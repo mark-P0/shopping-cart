@@ -1,9 +1,24 @@
+import { Context, useContext } from "react";
+
 /**
  * Suggested by ESLint instead of `{}`
  *
  * https://github.com/typescript-eslint/typescript-eslint/issues/2063#issuecomment-675156492
  */
 export type Empty = Record<never, never>;
+
+/**
+ * Wrapper for context pattern where the default value is `null`
+ *
+ * https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context#without-default-context-value
+ */
+export function useNullableContext<T>(ctx: Context<T | null>) {
+  const providedValues = useContext(ctx);
+  if (providedValues === null) {
+    throw new Error(`${ctx} not provided`);
+  }
+  return providedValues;
+}
 
 // cspell:words clsx
 /**

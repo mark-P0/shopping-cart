@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
-import { C, formatPrice } from "../utilities.ts";
+import { C, formatPrice, useNullableContext } from "../utilities.ts";
 import { ModalOverlay } from "./components/ModalOverlay.tsx";
 import { Spinner } from "./components/Spinner.tsx";
 
@@ -42,7 +42,7 @@ function QuantityCounter({ minimumCt }: { minimumCt: number }) {
 
 export function ProductView() {
   const productId = useLoaderData() as LoadedProductData;
-  const vehicles = useContext(VehiclesContext);
+  const { vehicles } = useNullableContext(VehiclesContext);
   const data = vehicles.find(({ id }) => id === productId);
   if (data === undefined) {
     return (

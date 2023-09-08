@@ -1,11 +1,15 @@
 import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import { readProducts } from "../../model/firebase/db.ts";
 import { Vehicle } from "../../model/vehicles.ts";
-import { Empty } from "../../utilities.ts";
 
-export const VehiclesContext = createContext<Vehicle[]>([]);
+type VehiclesContextProvision = {
+  vehicles: Vehicle[];
+};
+export const VehiclesContext = createContext<VehiclesContextProvision | null>(
+  null
+);
 
-export function VehiclesContextProvider(props: PropsWithChildren<Empty>) {
+export function VehiclesContextProvider(props: PropsWithChildren) {
   const { children } = props;
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 
@@ -17,7 +21,7 @@ export function VehiclesContextProvider(props: PropsWithChildren<Empty>) {
   }, []);
 
   return (
-    <VehiclesContext.Provider value={vehicles}>
+    <VehiclesContext.Provider value={{ vehicles }}>
       {children}
     </VehiclesContext.Provider>
   );
