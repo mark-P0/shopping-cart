@@ -96,8 +96,8 @@ export function ProductView() {
         </figure>
         <section className="overflow-hidden grid grid-rows-[auto_1fr_auto] gap-4 pr-4 py-6 pb-5">
           <header className="flex justify-between">
-            <div>
-              <h1 className="uppercase tracking-wider font-bold text-2xl">
+            <div className="grid gap-1">
+              <h1 className="uppercase tracking-wider font-bold text-2xl leading-none">
                 {model}
               </h1>
               <p className="uppercase text-xs tracking-widest text-neutral-400">

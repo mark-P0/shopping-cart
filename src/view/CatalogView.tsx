@@ -1,16 +1,14 @@
+import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { Link, Outlet } from "react-router-dom";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, useNullableContext } from "../utilities.ts";
+import {
+  CartPreview,
+  CartPreviewContext,
+  CartPreviewProvider,
+} from "./components/CartPreview.tsx";
 import { Spinner } from "./components/Spinner.tsx";
-
-function NavBar() {
-  return (
-    <nav>
-      <Link to="/">Solar Crown</Link>
-    </nav>
-  );
-}
 
 // TODO Manipulate `CatalogViewContext`
 function ProductListSettings() {
@@ -84,11 +82,18 @@ function ProductList() {
 // TODO Context for filtered list
 function CatalogViewContext() {}
 
-export function CatalogView() {
+function CatalogViewContents() {
+  const { isShown, show: showPreview } = useNullableContext(CartPreviewContext);
+
   return (
-    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-3 p-6">
+    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">
       <header>
-        <NavBar />
+        <nav className="h-full flex justify-between">
+          <Link to="/">Solar Crown</Link>
+          <button className="h-full aspect-square" onClick={showPreview}>
+            <ShoppingCartIcon />
+          </button>
+        </nav>
       </header>
       <main className="h-full overflow-hidden grid grid-cols-[1fr_4fr] gap-3">
         <ProductListSettings />
@@ -96,6 +101,15 @@ export function CatalogView() {
       </main>
       {/* <footer><code>footer</code></footer> */}
       <Outlet />
+      {isShown && <CartPreview />}
     </div>
+  );
+}
+
+export function CatalogView() {
+  return (
+    <CartPreviewProvider>
+      <CatalogViewContents />
+    </CartPreviewProvider>
   );
 }
