@@ -2,11 +2,16 @@ import {
   MouseEvent,
   PropsWithChildren,
   TransitionEvent,
+  createContext,
   useEffect,
   useRef,
   useState,
 } from "react";
 import { C } from "../../utilities.ts";
+
+type ModalOverlayContextProvision = { close: () => void };
+export const ModalOverlayContext =
+  createContext<ModalOverlayContextProvision | null>(null);
 
 export function ModalOverlay(props: PropsWithChildren) {
   const { children } = props;
@@ -16,6 +21,10 @@ export function ModalOverlay(props: PropsWithChildren) {
   useEffect(() => {
     setIsOpen(true);
   }, []);
+
+  function close() {
+    setIsOpen(false);
+  }
 
   function dismiss(event: MouseEvent) {
     if (ref.current !== event.target) return;
@@ -38,8 +47,15 @@ export function ModalOverlay(props: PropsWithChildren) {
     !isOpen && "[&>*]:scale-90 [&>*]:opacity-0"
   );
   return (
-    <div ref={ref} onClick={dismiss} onTransitionEnd={back} className={classes}>
-      {children}
-    </div>
+    <ModalOverlayContext.Provider value={{ close }}>
+      <div
+        ref={ref}
+        onClick={dismiss}
+        onTransitionEnd={back}
+        className={classes}
+      >
+        {children}
+      </div>
+    </ModalOverlayContext.Provider>
   );
 }

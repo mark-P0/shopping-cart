@@ -1,42 +1,69 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
+import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, useNullableContext } from "../utilities.ts";
-import { ModalOverlay } from "./components/ModalOverlay.tsx";
+import {
+  ModalOverlay,
+  ModalOverlayContext,
+} from "./components/ModalOverlay.tsx";
 import { Spinner } from "./components/Spinner.tsx";
 
-function QuantityCounter({ minimumCt }: { minimumCt: number }) {
-  const [ct, setCt] = useState<number>(minimumCt);
-  const [isDecrementDisabled, setIsDecrementDisabled] = useState<boolean>(true);
+type ProductToCartControlsProps = {
+  product: Vehicle;
+  minimumQty: number;
+};
+function ProductToCartControls({
+  product,
+  minimumQty,
+}: ProductToCartControlsProps) {
+  const { addToCart } = useNullableContext(CartContext);
+  const { close: hideOverlay } = useNullableContext(ModalOverlayContext);
+  const [qty, setQty] = useState(minimumQty);
+  const [isDecrementDisabled, setIsDecrementDisabled] = useState(true);
+
+  function addToCartAndHideOverlay() {
+    addToCart(product, qty);
+    hideOverlay();
+  }
 
   function decrement() {
-    const newCt = ct - 1;
-    if (newCt === minimumCt) setIsDecrementDisabled(true);
-    setCt(newCt);
+    const newQty = qty - 1;
+    if (newQty === minimumQty) setIsDecrementDisabled(true);
+    setQty(newQty);
   }
   function increment() {
-    setCt(ct + 1);
+    setQty(qty + 1);
     setIsDecrementDisabled(false);
   }
 
   return (
-    <div className="flex items-center gap-1">
+    <footer className="flex justify-end gap-6">
       <button
-        disabled={isDecrementDisabled}
-        className="bg-black disabled:opacity-25 rounded-full h-8 w-8 font-bold"
-        onClick={decrement}
+        className="bg-black px-3 py-2 uppercase font-bold tracking-wider"
+        onClick={addToCartAndHideOverlay}
       >
-        -
+        Add to Cart
       </button>
-      <span className="h-7 w-7 grid place-items-center">{ct}</span>
-      <button
-        className="bg-black rounded-full h-8 w-8 font-bold"
-        onClick={increment}
-      >
-        +
-      </button>
-    </div>
+      <div className="flex items-center gap-1">
+        <button
+          disabled={isDecrementDisabled}
+          className="bg-black rounded-full h-8 w-8 font-bold disabled:opacity-25"
+          onClick={decrement}
+        >
+          -
+        </button>
+        <span className="h-7 w-7 grid place-items-center">{qty}</span>
+        <button
+          className="bg-black rounded-full h-8 w-8 font-bold"
+          onClick={increment}
+        >
+          +
+        </button>
+      </div>
+    </footer>
   );
 }
 
@@ -84,12 +111,7 @@ export function ProductView() {
             </div>
           </header>
           <p className={descClasses}>{description}</p>
-          <footer className="flex justify-end gap-6">
-            <button className="bg-black px-3 py-2 uppercase font-bold tracking-wider">
-              Add to Cart
-            </button>
-            <QuantityCounter minimumCt={1} />
-          </footer>
+          <ProductToCartControls product={data} minimumQty={1} />
         </section>
       </article>
     </ModalOverlay>
