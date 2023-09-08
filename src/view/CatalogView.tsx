@@ -80,7 +80,7 @@ function ProductList() {
 }
 
 // TODO Context for filtered list
-function CatalogViewContext() {}
+// function CatalogViewContext() {}
 
 function CatalogViewContents() {
   const { isShown, show: showPreview } = useNullableContext(CartPreviewContext);

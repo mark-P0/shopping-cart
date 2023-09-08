@@ -1,5 +1,4 @@
 import {
-  addDoc,
   collection,
   doc,
   getDocs,
@@ -15,13 +14,13 @@ const db = getFirestore(app);
 const collectionPaths = ["products"] as const;
 type CollectionPath = (typeof collectionPaths)[number];
 
-async function create(collectionPath: CollectionPath, document: object) {
-  try {
-    return await addDoc(collection(db, collectionPath), document);
-  } catch (e) {
-    throw new Error(`Error adding document: ${e}`);
-  }
-}
+// async function create(collectionPath: CollectionPath, document: object) {
+//   try {
+//     return await addDoc(collection(db, collectionPath), document);
+//   } catch (e) {
+//     throw new Error(`Error adding document: ${e}`);
+//   }
+// }
 
 async function createWithId(
   collectionPath: CollectionPath,
