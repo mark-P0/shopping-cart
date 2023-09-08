@@ -15,7 +15,7 @@ export type Empty = Record<never, never>;
 export function useNullableContext<T>(ctx: Context<T | null>) {
   const providedValues = useContext(ctx);
   if (providedValues === null) {
-    throw new Error(`${ctx} not provided`);
+    throw new Error(`Context not provided`);
   }
   return providedValues;
 }
