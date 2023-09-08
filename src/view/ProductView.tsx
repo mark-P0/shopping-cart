@@ -73,7 +73,7 @@ export function ProductView() {
   const data = vehicles.find(({ id }) => id === productId);
   if (data === undefined) {
     return (
-      <ModalOverlay>
+      <ModalOverlay modalOrigin="center">
         <Spinner className="w-16 h-16" />
       </ModalOverlay>
     );
@@ -89,7 +89,7 @@ export function ProductView() {
     "bg-neutral-800"
   );
   return (
-    <ModalOverlay>
+    <ModalOverlay modalOrigin="center" afterTransition={() => history.back()}>
       <article className="overflow-hidden w-3/5 h-3/5 grid grid-cols-[3fr_2fr] bg-neutral-700 rounded-xl">
         <figure className="grid place-items-center">
           <img src={image} alt="" />

@@ -13,8 +13,12 @@ type ModalOverlayContextProvision = { close: () => void };
 export const ModalOverlayContext =
   createContext<ModalOverlayContextProvision | null>(null);
 
-export function ModalOverlay(props: PropsWithChildren) {
-  const { children } = props;
+type ModalOverlayProps = {
+  modalOrigin: "center" | "right";
+  afterTransition?: () => void;
+};
+export function ModalOverlay(props: PropsWithChildren<ModalOverlayProps>) {
+  const { children, afterTransition, modalOrigin } = props;
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,32 +30,41 @@ export function ModalOverlay(props: PropsWithChildren) {
     setIsOpen(false);
   }
 
-  function dismiss(event: MouseEvent) {
+  function todoOnOverlayClick(event: MouseEvent) {
     if (ref.current !== event.target) return;
     setIsOpen(false);
   }
 
-  function back(event: TransitionEvent) {
+  function todoAfterTransition(event: TransitionEvent) {
     if (ref.current !== event.target) return;
     if (isOpen) return;
-    history.back();
+    if (afterTransition === undefined) return;
+    afterTransition();
   }
 
   const classes = C(
     "fixed top-0 left-0",
     "h-screen w-screen",
-    "grid place-items-center",
+    ...[
+      "grid items-center",
+      modalOrigin === "center" && "justify-items-center",
+      modalOrigin === "right" && "justify-items-end",
+    ],
     isOpen && "bg-black/50",
-    "transition duration-150",
-    "[&>*]:transition [&>*]:duration-150",
-    !isOpen && "[&>*]:scale-90 [&>*]:opacity-0"
+    ...[
+      "transition [&>*]:transition",
+      modalOrigin === "center" && "duration-300 [&>*]:duration-300",
+      modalOrigin === "right" && "duration-500 [&>*]:duration-500",
+    ],
+    !isOpen && modalOrigin === "center" && "[&>*]:scale-90 [&>*]:opacity-0",
+    !isOpen && modalOrigin === "right" && "[&>*]:translate-x-full"
   );
   return (
     <ModalOverlayContext.Provider value={{ close }}>
       <div
         ref={ref}
-        onClick={dismiss}
-        onTransitionEnd={back}
+        onClick={todoOnOverlayClick}
+        onTransitionEnd={todoAfterTransition}
         className={classes}
       >
         {children}
