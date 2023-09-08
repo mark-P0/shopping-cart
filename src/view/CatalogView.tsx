@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { VehiclesContext } from "../controller/contexts/VehicleContext.tsx";
+import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice } from "../utilities.ts";
 import { Spinner } from "./components/Spinner.tsx";

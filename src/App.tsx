@@ -1,5 +1,5 @@
 import { Outlet, Route } from "react-router-dom";
-import { VehiclesContextProvider } from "./controller/contexts/VehicleContext.tsx";
+import { VehiclesContextProvider } from "./controller/contexts/VehiclesContext.tsx";
 import { productLoader } from "./controller/loaders/product-loader.ts";
 import { CatalogView } from "./view/CatalogView.tsx";
 import { LandingView } from "./view/LandingView.tsx";

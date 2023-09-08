@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { VehiclesContext } from "../controller/contexts/VehicleContext.tsx";
+import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
 import { C, formatPrice } from "../utilities.ts";
 import { ModalOverlay } from "./components/ModalOverlay.tsx";
