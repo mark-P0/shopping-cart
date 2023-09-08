@@ -1,53 +1,10 @@
-import {
-  MouseEvent,
-  PropsWithChildren,
-  TransitionEvent,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { VehiclesContext } from "../controller/contexts/VehicleContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
-import { C, Empty, formatPrice } from "../utilities.ts";
+import { C, formatPrice } from "../utilities.ts";
+import { ModalOverlay } from "./components/ModalOverlay.tsx";
 import { Spinner } from "./components/Spinner.tsx";
-
-function ModalOverlay(props: PropsWithChildren<Empty>) {
-  const { children } = props;
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsOpen(true);
-  }, []);
-
-  function dismiss(event: MouseEvent) {
-    if (ref.current !== event.target) return;
-    setIsOpen(false);
-  }
-
-  function back(event: TransitionEvent) {
-    if (ref.current !== event.target) return;
-    if (isOpen) return;
-    history.back();
-  }
-
-  const classes = C(
-    "fixed top-0 left-0",
-    "h-screen w-screen",
-    "grid place-items-center",
-    isOpen && "bg-black/50",
-    "transition duration-150",
-    "[&>*]:transition [&>*]:duration-150",
-    !isOpen && "[&>*]:scale-90 [&>*]:opacity-0"
-  );
-  return (
-    <div ref={ref} onClick={dismiss} onTransitionEnd={back} className={classes}>
-      {children}
-    </div>
-  );
-}
 
 function QuantityCounter({ minimumCt }: { minimumCt: number }) {
   const [ct, setCt] = useState<number>(minimumCt);
