@@ -59,7 +59,7 @@ function Product({ data }: { data: Vehicle }) {
 
 // TODO Read / React to `CatalogViewContext`
 function ProductList() {
-  const { vehicles: data } = useNullableContext(VehiclesContext);
+  const { vehicles: data } = useNullableContext({ VehiclesContext });
   if (data.length === 0) {
     return (
       <div className="grid place-items-center">
@@ -83,7 +83,9 @@ function ProductList() {
 function CatalogViewContext() {}
 
 function CatalogViewContents() {
-  const { isShown, show: showPreview } = useNullableContext(CartPreviewContext);
+  const { isShown, show: showPreview } = useNullableContext({
+    CartPreviewContext,
+  });
 
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">

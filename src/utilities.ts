@@ -11,13 +11,24 @@ export type Empty = Record<never, never>;
  * Wrapper for context pattern where the default value is `null`
  *
  * https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context#without-default-context-value
+ *
+ * Used like `useNullableContext({ YourContext })`
+ * to automatically get a `'YourContext'` label
  */
-export function useNullableContext<T>(ctx: Context<T | null>) {
-  const providedValues = useContext(ctx);
-  if (providedValues === null) {
-    throw new Error(`Context not provided`);
+export function useNullableContext<T>(
+  labelledContext: Record<string, Context<T | null>>
+) {
+  const entries = Object.entries(labelledContext);
+  if (entries.length > 1) {
+    throw new Error("Possible improper use of custom context hook");
   }
-  return providedValues;
+  const [label, context] = entries[0];
+
+  const provision = useContext(context);
+  if (provision === null) {
+    throw new Error(`${label} not provided`);
+  }
+  return provision;
 }
 
 // cspell:words clsx

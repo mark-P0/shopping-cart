@@ -19,8 +19,8 @@ function ProductToCartControls({
   product,
   minimumQty,
 }: ProductToCartControlsProps) {
-  const { addToCart } = useNullableContext(CartContext);
-  const { close: hideOverlay } = useNullableContext(ModalOverlayContext);
+  const { addToCart } = useNullableContext({ CartContext });
+  const { close: hideOverlay } = useNullableContext({ ModalOverlayContext });
   const [qty, setQty] = useState(minimumQty);
   const [isDecrementDisabled, setIsDecrementDisabled] = useState(true);
 
@@ -69,7 +69,7 @@ function ProductToCartControls({
 
 export function ProductView() {
   const productId = useLoaderData() as LoadedProductData;
-  const { vehicles } = useNullableContext(VehiclesContext);
+  const { vehicles } = useNullableContext({ VehiclesContext });
   const data = vehicles.find(({ id }) => id === productId);
   if (data === undefined) {
     return (

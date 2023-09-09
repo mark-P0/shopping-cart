@@ -16,7 +16,7 @@ export const CartPreviewContext = createContext<CartPreviewProvision | null>(
 );
 
 function ItemPreview({ id, qty }: { id: Vehicle["id"]; qty: number }) {
-  const { vehicles } = useNullableContext(VehiclesContext);
+  const { vehicles } = useNullableContext({ VehiclesContext });
   const data = vehicles.find(({ id: vehicleId }) => vehicleId === id);
   if (data === undefined) {
     throw new Error(`Unexpected vehicle ID ${id}`);
@@ -43,8 +43,8 @@ function ItemPreview({ id, qty }: { id: Vehicle["id"]; qty: number }) {
 }
 
 export function CartPreview() {
-  const { cart } = useNullableContext(CartContext);
-  const { hide } = useNullableContext(CartPreviewContext);
+  const { cart } = useNullableContext({ CartContext });
+  const { hide } = useNullableContext({ CartPreviewContext });
 
   const cartProducts = [...cart.entries()].reverse();
   const isCartEmpty = cartProducts.length === 0;
