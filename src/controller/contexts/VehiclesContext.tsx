@@ -2,12 +2,10 @@ import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import { readProducts } from "../../model/firebase/db.ts";
 import { Vehicle } from "../../model/vehicles.ts";
 
-type VehiclesContextProvision = {
+type VehiclesProvision = {
   vehicles: Vehicle[];
 };
-export const VehiclesContext = createContext<VehiclesContextProvision | null>(
-  null
-);
+export const VehiclesContext = createContext<VehiclesProvision | null>(null);
 
 export function VehiclesContextProvider(props: PropsWithChildren) {
   const { children } = props;

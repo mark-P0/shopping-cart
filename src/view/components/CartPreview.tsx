@@ -6,13 +6,14 @@ import { Vehicle } from "../../model/vehicles.ts";
 import { formatPrice, useNullableContext } from "../../utilities.ts";
 import { ModalOverlay } from "./ModalOverlay.tsx";
 
-type CartPreviewContextProvision = {
+type CartPreviewProvision = {
   isShown: boolean;
   show: () => void;
   hide: () => void;
 };
-export const CartPreviewContext =
-  createContext<CartPreviewContextProvision | null>(null);
+export const CartPreviewContext = createContext<CartPreviewProvision | null>(
+  null
+);
 
 function ItemPreview({ id, qty }: { id: Vehicle["id"]; qty: number }) {
   const { vehicles } = useNullableContext(VehiclesContext);

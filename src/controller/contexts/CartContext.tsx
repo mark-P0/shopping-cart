@@ -2,11 +2,11 @@ import { PropsWithChildren, createContext, useState } from "react";
 import { Vehicle } from "../../model/vehicles.ts";
 
 type Cart = Map<Vehicle["id"], number>;
-type CartContextProvision = {
+type CartProvision = {
   cart: Cart;
   addToCart: (product: Vehicle, quantity: number) => void;
 };
-export const CartContext = createContext<CartContextProvision | null>(null);
+export const CartContext = createContext<CartProvision | null>(null);
 
 export function CartContextProvider(props: PropsWithChildren) {
   const { children } = props;

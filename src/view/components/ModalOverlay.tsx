@@ -9,9 +9,10 @@ import {
 } from "react";
 import { C } from "../../utilities.ts";
 
-type ModalOverlayContextProvision = { close: () => void };
-export const ModalOverlayContext =
-  createContext<ModalOverlayContextProvision | null>(null);
+type ModalOverlayProvision = { close: () => void };
+export const ModalOverlayContext = createContext<ModalOverlayProvision | null>(
+  null
+);
 
 type ModalOverlayProps = {
   modalOrigin: "center" | "right";
