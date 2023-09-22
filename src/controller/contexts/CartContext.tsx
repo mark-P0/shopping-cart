@@ -14,10 +14,13 @@ export function CartContextProvider(props: PropsWithChildren) {
   console.log({ cart }); // DELETEME
 
   function addToCart({ id }: Vehicle, quantity: number) {
-    const newCart = new Map(cart); // Best practice is to create new object, but maybe can reuse
-    const cartItemCt = newCart.get(id) ?? 0;
-    newCart.set(id, cartItemCt + quantity);
-    setCart(newCart);
+    const existingCt = cart.get(id) ?? 0;
+    const cartEntriesWithoutItemToAdd = [...cart.entries()].filter(
+      ([cartItemId]) => cartItemId !== id
+    );
+    const newCart = new Map(cartEntriesWithoutItemToAdd); // Rebuild cart without item to add
+    newCart.set(id, existingCt + quantity); // Maps keep insertion order; this will ensure that the item added will be "bumped" to the end of the cart
+    setCart(newCart); // Set rebuilt cart as THE cart
   }
 
   return (
