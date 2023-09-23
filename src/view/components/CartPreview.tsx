@@ -28,15 +28,17 @@ function ItemPreview({ id, qty }: { id: Vehicle["id"]; qty: number }) {
   return (
     <section className="grid grid-cols-[3fr_4fr_2fr] items-center bg-neutral-700 rounded-xl py-3 pr-5 pl-2 gap-3">
       <img src={image} alt="" />
-      <div className="grid gap-1">
-        <p className="leading-none">{model}</p>
-        <p className="uppercase text-xs tracking-widest text-neutral-400">
+      <div>
+        <p className="uppercase tracking-widest text-sm font-bold leading-none line-clamp-2 ">
+          {model}
+        </p>
+        <p className="uppercase tracking-widest text-xs text-neutral-400">
           {brand}
         </p>
       </div>
       <div className="text-end">
         <p className="text-xs tracking-widest text-neutral-400">x{qty}</p>
-        <p className="text-sm tracking-widest">{price}</p>
+        <p className="text-xs tracking-widest">{price}</p>
       </div>
     </section>
   );
