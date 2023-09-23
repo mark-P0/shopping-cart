@@ -93,7 +93,7 @@ function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
         <img src={image} alt="" />
       </li>
       <li className="justify-self-start">
-        <div className="uppercase tracking-widest text-sm font-bold">
+        <div className="uppercase tracking-widest text-sm font-bold leading-tight line-clamp-2">
           {model}
         </div>
         <div className="uppercase tracking-widest text-xs text-neutral-400">
