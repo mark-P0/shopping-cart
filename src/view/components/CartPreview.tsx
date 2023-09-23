@@ -1,5 +1,6 @@
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import { PropsWithChildren, createContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../../model/vehicles.ts";
@@ -87,13 +88,14 @@ export function CartPreview() {
         <div className="grid place-items-center">{body}</div>
         <footer className="grid place-items-end">
           {!isCartEmpty && (
-            <button
-              disabled={isCartEmpty}
-              onClick={() => console.log("test")}
-              className="bg-black px-3 py-2 uppercase font-bold tracking-wider disabled:opacity-25"
-            >
-              {!hasExcess ? "Manage" : "View All"}
-            </button>
+            <Link to="/cart">
+              <button
+                disabled={isCartEmpty}
+                className="bg-black px-3 py-2 uppercase font-bold tracking-wider disabled:opacity-25"
+              >
+                {!hasExcess ? "Manage" : "View All"}
+              </button>
+            </Link>
           )}
         </footer>
       </aside>

@@ -4,7 +4,9 @@ import { Vehicle } from "../../model/vehicles.ts";
 type Cart = Map<Vehicle["id"], number>;
 type CartProvision = {
   cart: Cart;
-  addToCart: (product: Vehicle, quantity: number) => void;
+  addToCart: ({ id }: Vehicle, quantity: number) => void;
+  setQty: (id: string, quantity: number) => void;
+  removeFromCart: (id: string) => void;
 };
 export const CartContext = createContext<CartProvision | null>(null);
 
@@ -23,8 +25,24 @@ export function CartContextProvider(props: PropsWithChildren) {
     setCart(newCart); // Set rebuilt cart as THE cart
   }
 
+  function setQty(id: Vehicle["id"], quantity: number) {
+    if (cart.get(id) === undefined) {
+      throw new Error("Cannot set quantity of non-existent item");
+    }
+
+    const newCart = new Map(cart);
+    newCart.set(id, quantity);
+    setCart(newCart);
+  }
+
+  function removeFromCart(id: Vehicle["id"]) {
+    const newCart = new Map(cart);
+    newCart.delete(id);
+    setCart(newCart);
+  }
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, setQty, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

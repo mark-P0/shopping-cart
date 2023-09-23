@@ -2,6 +2,7 @@ import { Outlet, Route } from "react-router-dom";
 import { CartContextProvider } from "./controller/contexts/CartContext.tsx";
 import { VehiclesContextProvider } from "./controller/contexts/VehiclesContext.tsx";
 import { productLoader } from "./controller/loaders/product-loader.ts";
+import { CartView } from "./view/CartView.tsx";
 import { CatalogView } from "./view/CatalogView.tsx";
 import { LandingView } from "./view/LandingView.tsx";
 import { ProductView } from "./view/ProductView.tsx";
@@ -28,5 +29,6 @@ export const AppTree = (
         loader={productLoader}
       />
     </Route>
+    <Route path="/cart" element={<CartView />} />
   </Route>
 );
