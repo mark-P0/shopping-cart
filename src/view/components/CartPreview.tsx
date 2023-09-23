@@ -1,4 +1,4 @@
-import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
+import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import { PropsWithChildren, createContext, useState } from "react";
 import { CartContext } from "../../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../../controller/contexts/VehiclesContext.tsx";

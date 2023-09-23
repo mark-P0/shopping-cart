@@ -1,4 +1,4 @@
-import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { Link, Outlet } from "react-router-dom";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
