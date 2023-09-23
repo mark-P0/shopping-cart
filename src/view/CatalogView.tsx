@@ -41,10 +41,10 @@ function Product({ data }: { data: Vehicle }) {
   };
   return (
     <Link
-      className="bg-neutral-700 rounded-xl overflow-hidden text-left"
+      className="h-full w-full block bg-neutral-700 rounded-xl overflow-hidden text-left"
       to={`/catalog/${id}`}
     >
-      <figure className="h-full relative overflow-hidden">
+      <figure className="h-full w-full relative overflow-hidden">
         <img className={classes.img} src={image} alt="" />
         <figcaption className={classes.label}>
           <h3 className="uppercase tracking-wider font-bold">{name}</h3>
@@ -59,8 +59,8 @@ function Product({ data }: { data: Vehicle }) {
 
 // TODO Read / React to `CatalogViewContext`
 function ProductList() {
-  const { vehicles: data } = useNullableContext({ VehiclesContext });
-  if (data.length === 0) {
+  const { vehicles: items } = useNullableContext({ VehiclesContext });
+  if (items.length === 0) {
     return (
       <div className="grid place-items-center">
         <Spinner className="w-24 h-24" />
@@ -68,7 +68,6 @@ function ProductList() {
     );
   }
 
-  const productEls = data.map((data) => <Product data={data} />);
   const classes = C(
     "h-full overflow-y-scroll",
     "grid grid-cols-3 auto-rows-[33%]",
@@ -76,7 +75,17 @@ function ProductList() {
     "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600",
     "bg-neutral-800 rounded-xl"
   );
-  return <section className={classes}>{...productEls}</section>;
+  return (
+    <section className="overflow-hidden h-full">
+      <ol className={classes}>
+        {items.map((data) => (
+          <li key={data.id} className="h-full w-full">
+            <Product data={data} />
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
 }
 
 // TODO Context for filtered list

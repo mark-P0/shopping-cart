@@ -126,7 +126,7 @@ function CartList() {
         <CartListHeader />
       </li>
       {cartEntries.map(([id, qty]) => (
-        <li>
+        <li key={id}>
           <CartItem id={id} qty={qty} />
         </li>
       ))}

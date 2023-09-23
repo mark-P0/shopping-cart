@@ -63,7 +63,7 @@ export function CartPreview() {
   ) : (
     <ol className="grid auto-rows-min gap-3">
       {cartProducts.slice(0, 5).map(([id, qty]) => (
-        <li>
+        <li key={id}>
           <ItemPreview id={id} qty={qty} />
         </li>
       ))}
