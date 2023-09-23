@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
-import { C, formatPrice, useNullableContext } from "../utilities.ts";
+import { C, formatPrice, sum, useNullableContext } from "../utilities.ts";
 
 const rowCls = C(
   ...["grid place-items-center gap-4", "grid-cols-[1fr_4fr_2fr_2fr_2fr_1fr]"],
@@ -145,6 +145,17 @@ function CartEmptyNotice() {
 
 export function CartView() {
   const { cart } = useNullableContext({ CartContext });
+  const { vehicles } = useNullableContext({ VehiclesContext });
+
+  const cartItems = vehicles.filter(({ id }) => cart.has(id));
+  const totalPrice = sum(
+    ...cartItems.map(({ id, price }) => price * (cart.get(id) ?? 0))
+  );
+  const totalPriceStr = formatPrice(totalPrice, {
+    style: "currency",
+    currency: "USD",
+    notation: "standard",
+  });
 
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">
@@ -158,7 +169,11 @@ export function CartView() {
         {cart.size === 0 ? <CartEmptyNotice /> : <CartList />}
       </main>
       {cart.size > 0 && (
-        <footer className="flex justify-end">
+        <footer className="flex justify-end items-center gap-6">
+          <div className="uppercase tracking-widest text-sm font-thin">
+            Total:
+            <span className="ml-3 text-xl font-bold">{totalPriceStr}</span>
+          </div>
           <button className="bg-black px-3 py-2 uppercase tracking-widest font-bold">
             Checkout
           </button>
