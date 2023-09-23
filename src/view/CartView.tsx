@@ -1,4 +1,4 @@
-import { TrashIcon } from "@heroicons/react/20/solid";
+import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/20/solid";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -41,15 +41,9 @@ function DeleteButton({ id }: { id: Vehicle["id"] }) {
   );
 }
 
-function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
-  const { vehicles } = useNullableContext({ VehiclesContext });
+function Counter({ id, qty }: { id: Vehicle["id"]; qty: number }) {
   const { setQty } = useNullableContext({ CartContext });
   const [isDecrementDisabled, setIsDecrementDisabled] = useState(qty === 1);
-
-  const data = vehicles.find(({ id: vehicleId }) => vehicleId === id);
-  if (data === undefined) {
-    throw new Error(`Data for ID ${id} not found!`);
-  }
 
   function decrement() {
     if (qty - 1 === 1) setIsDecrementDisabled(true);
@@ -58,6 +52,35 @@ function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
   function increment() {
     setIsDecrementDisabled(false);
     setQty(id, qty + 1);
+  }
+
+  return (
+    <form className="flex items-center gap-3">
+      <button
+        type="button"
+        disabled={isDecrementDisabled}
+        className="h-8 w-8 p-2 bg-black rounded-full disabled:opacity-25"
+        onClick={decrement}
+      >
+        <MinusIcon />
+      </button>
+      {qty}
+      <button
+        type="button"
+        className="h-8 w-8 p-2 bg-black rounded-full"
+        onClick={increment}
+      >
+        <PlusIcon />
+      </button>
+    </form>
+  );
+}
+
+function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
+  const { vehicles } = useNullableContext({ VehiclesContext });
+  const data = vehicles.find(({ id: vehicleId }) => vehicleId === id);
+  if (data === undefined) {
+    throw new Error(`Data for ID ${id} not found!`);
   }
 
   const { image, model, brand } = data;
@@ -78,25 +101,8 @@ function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
         </div>
       </li>
       <li className="uppercase tracking-widest text-sm">{price}</li>
-      <li>
-        <form className="flex items-center gap-3">
-          <button
-            type="button"
-            disabled={isDecrementDisabled}
-            className="bg-black rounded-full h-8 w-8 font-bold disabled:opacity-25"
-            onClick={decrement}
-          >
-            -
-          </button>
-          <span className="text-sm">{qty}</span>
-          <button
-            type="button"
-            className="bg-black rounded-full h-8 w-8 font-bold"
-            onClick={increment}
-          >
-            +
-          </button>
-        </form>
+      <li className="text-sm">
+        <Counter id={id} qty={qty} />
       </li>
       <li className="uppercase tracking-widest text-sm">{subtotal}</li>
       <li className="h-5 aspect-square">
