@@ -21,12 +21,12 @@ function CartListHeader() {
 
   return (
     <ol className={cls}>
-      <li>Product</li>
+      <li></li>
       <li></li>
       <li>Price</li>
       <li>Quantity</li>
       <li>Subtotal</li>
-      <li>Actions</li>
+      <li></li>
     </ol>
   );
 }
