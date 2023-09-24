@@ -4,6 +4,7 @@ import { VehiclesContextProvider } from "./controller/contexts/VehiclesContext.t
 import { productLoader } from "./controller/loaders/product-loader.ts";
 import { CartView } from "./view/CartView.tsx";
 import { CatalogView } from "./view/CatalogView.tsx";
+import { ErrorView } from "./view/ErrorView.tsx";
 import { LandingView } from "./view/LandingView.tsx";
 import { ProductView } from "./view/ProductView.tsx";
 
@@ -20,7 +21,7 @@ function App() {
 }
 
 export const AppTree = (
-  <Route path="/" element={<App />}>
+  <Route path="/" element={<App />} errorElement={<ErrorView />}>
     <Route index element={<LandingView />} />
     <Route path="/catalog" element={<CatalogView />}>
       <Route
