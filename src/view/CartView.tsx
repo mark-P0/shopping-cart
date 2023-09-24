@@ -6,6 +6,7 @@ import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, sum, useNullableContext } from "../utilities.ts";
+import { ModalOverlay } from "./components/ModalOverlay.tsx";
 
 const rowCls = C(
   ...["grid place-items-center gap-4", "grid-cols-[1fr_4fr_2fr_2fr_2fr_1fr]"],
@@ -146,13 +147,20 @@ function CartEmptyNotice() {
 export function CartView() {
   const { cart } = useNullableContext({ CartContext });
   const { vehicles } = useNullableContext({ VehiclesContext });
+  const [isMockNoticeShown, setIsMockNoticeShown] = useState(false);
+
+  function showMockNotice() {
+    setIsMockNoticeShown(true);
+  }
+  function hideMockNotice() {
+    setIsMockNoticeShown(false);
+  }
 
   const cartItems = vehicles.filter(({ id }) => cart.has(id));
   const totalPrice = sum(
     ...cartItems.map(({ id, price }) => price * (cart.get(id) ?? 0))
   );
   const totalPriceStr = formatPrice("standard", totalPrice);
-
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">
       <header>
@@ -170,10 +178,24 @@ export function CartView() {
             Total:
             <span className="ml-3 text-xl font-bold">{totalPriceStr}</span>
           </div>
-          <button className="bg-black px-3 py-2 uppercase tracking-widest font-bold">
+          <button
+            className="bg-black px-3 py-2 uppercase tracking-widest font-bold"
+            onClick={showMockNotice}
+          >
             Checkout
           </button>
         </footer>
+      )}
+      {cart.size > 0 && isMockNoticeShown && (
+        <ModalOverlay modalOrigin="center" afterTransition={hideMockNotice}>
+          <article className="w-3/5 bg-neutral-700 rounded-xl p-4">
+            <h2 className="text-2xl font-bold">Thank you for your interest!</h2>
+            <p>
+              This is only a mock demonstration of a simple e-commerce
+              application. Only the cart features are functional.
+            </p>
+          </article>
+        </ModalOverlay>
       )}
     </div>
   );
