@@ -51,15 +51,21 @@ export function sleep(seconds: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, seconds * 1000));
 }
 
-export function formatPrice(
-  price: number,
-  options: Intl.NumberFormatOptions = {
+const PriceFormatter = {
+  compact: Intl.NumberFormat(undefined, {
     style: "currency",
     currency: "USD",
     notation: "compact",
-  }
-): string {
-  return new Intl.NumberFormat(undefined, options).format(price);
+  }),
+  standard: Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: "USD",
+    notation: "standard",
+  }),
+} as const;
+type PriceFormat = keyof typeof PriceFormatter;
+export function formatPrice(format: PriceFormat, price: number): string {
+  return PriceFormatter[format].format(price);
 }
 
 export function sum(...numbers: number[]): number {

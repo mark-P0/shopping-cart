@@ -23,7 +23,7 @@ function Product({ data }: { data: Vehicle }) {
   const { id, brand, model, image } = data;
 
   const name = `${brand} ${model}`;
-  const price = formatPrice(data.price);
+  const price = formatPrice("compact", data.price);
   const classes = {
     img: C(
       "object-cover",

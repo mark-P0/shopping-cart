@@ -84,8 +84,8 @@ function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
   }
 
   const { image, model, brand } = data;
-  const price = formatPrice(data.price);
-  const subtotal = formatPrice(data.price * qty);
+  const price = formatPrice("compact", data.price);
+  const subtotal = formatPrice("compact", data.price * qty);
 
   return (
     <ol className={rowCls}>
@@ -151,11 +151,7 @@ export function CartView() {
   const totalPrice = sum(
     ...cartItems.map(({ id, price }) => price * (cart.get(id) ?? 0))
   );
-  const totalPriceStr = formatPrice(totalPrice, {
-    style: "currency",
-    currency: "USD",
-    notation: "standard",
-  });
+  const totalPriceStr = formatPrice("standard", totalPrice);
 
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">

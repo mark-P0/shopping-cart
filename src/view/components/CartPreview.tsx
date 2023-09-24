@@ -24,7 +24,7 @@ function ItemPreview({ id, qty }: { id: Vehicle["id"]; qty: number }) {
   }
 
   const { image, model, brand } = data;
-  const price = formatPrice(data.price * qty);
+  const price = formatPrice("compact", data.price * qty);
 
   return (
     <section className="grid grid-cols-[3fr_4fr_2fr] items-center bg-neutral-700 rounded-xl py-3 pr-5 pl-2 gap-3">

@@ -80,7 +80,7 @@ export function ProductView() {
   }
 
   const { brand, model, description, image } = data;
-  const price = formatPrice(data.price);
+  const price = formatPrice("compact", data.price);
 
   const descClasses = C(
     "overflow-hidden overflow-y-auto",
