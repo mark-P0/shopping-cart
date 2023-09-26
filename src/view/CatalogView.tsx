@@ -1,6 +1,9 @@
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { Link, Outlet } from "react-router-dom";
-import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
+import {
+  CatalogContext,
+  CatalogContextProvider,
+} from "../controller/contexts/CatalogContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, useNullableContext } from "../utilities.ts";
 import {
@@ -10,7 +13,6 @@ import {
 } from "./components/CartPreview.tsx";
 import { Spinner } from "./components/Spinner.tsx";
 
-// TODO Manipulate `CatalogViewContext`
 function ProductListSettings() {
   return (
     <aside className="h-full bg-red-500">
@@ -57,9 +59,8 @@ function Product({ data }: { data: Vehicle }) {
   );
 }
 
-// TODO Read / React to `CatalogViewContext`
 function ProductList() {
-  const { vehicles: items } = useNullableContext({ VehiclesContext });
+  const { vehicles: items } = useNullableContext({ CatalogContext });
   if (items.length === 0) {
     return (
       <div className="grid place-items-center">
@@ -87,9 +88,6 @@ function ProductList() {
     </section>
   );
 }
-
-// TODO Context for filtered list
-function CatalogViewContext() {}
 
 function CatalogViewContents() {
   const { isShown, show: showPreview } = useNullableContext({
@@ -120,7 +118,9 @@ function CatalogViewContents() {
 export function CatalogView() {
   return (
     <CartPreviewProvider>
-      <CatalogViewContents />
+      <CatalogContextProvider>
+        <CatalogViewContents />
+      </CatalogContextProvider>
     </CartPreviewProvider>
   );
 }
