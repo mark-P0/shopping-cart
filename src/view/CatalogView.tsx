@@ -1,11 +1,18 @@
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
+import { useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import {
   CatalogContext,
   CatalogContextProvider,
 } from "../controller/contexts/CatalogContext.tsx";
+import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
-import { C, formatPrice, useNullableContext } from "../utilities.ts";
+import {
+  C,
+  accessNullableRef,
+  formatPrice,
+  useNullableContext,
+} from "../utilities.ts";
 import {
   CartPreview,
   CartPreviewContext,
@@ -14,9 +21,47 @@ import {
 import { Spinner } from "./components/Spinner.tsx";
 
 function ProductListSettings() {
+  const { vehicles } = useNullableContext({ VehiclesContext });
+  const { setBrands } = useNullableContext({ CatalogContext });
+  const formRef = useRef<HTMLFormElement>(null);
+
+  type DataEntry =
+    | ["brand", Vehicle["brand"]]
+    | ["priceMin", Vehicle["price"]]
+    | ["priceMax", Vehicle["price"]];
+  function filter() {
+    const form = accessNullableRef({ formRef });
+    const data = [...new FormData(form).entries()] as DataEntry[];
+
+    const brandsToShow = data
+      .filter(
+        (entry): entry is ["brand", Vehicle["brand"]] => entry[0] === "brand"
+      )
+      .map(([, value]) => value);
+    setBrands(brandsToShow);
+  }
+
+  const brands = [...new Set(vehicles.map(({ brand }) => brand))].sort((a, b) =>
+    a < b ? -1 : 1
+  );
+
+  const cls = C(
+    "h-full overflow-y-auto",
+    "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600"
+  );
   return (
-    <aside className="h-full bg-red-500">
-      <code>settings</code>
+    <aside className="h-full overflow-hidden">
+      <form ref={formRef} onInput={filter} className={cls}>
+        <fieldset className="columns-2">
+          <legend>Brand</legend>
+          {brands.map((brand) => (
+            <label key={brand} className="flex gap-2 items-center truncate">
+              <input type="checkbox" name="brand" value={brand} />
+              {brand}
+            </label>
+          ))}
+        </fieldset>
+      </form>
     </aside>
   );
 }
@@ -60,7 +105,7 @@ function Product({ data }: { data: Vehicle }) {
 }
 
 function ProductList() {
-  const { vehicles: items } = useNullableContext({ CatalogContext });
+  const { filtered: items } = useNullableContext({ CatalogContext });
   if (items.length === 0) {
     return (
       <div className="grid place-items-center">

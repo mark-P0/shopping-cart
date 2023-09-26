@@ -1,4 +1,4 @@
-import { Context, useContext } from "react";
+import { Context, RefObject, useContext } from "react";
 
 /**
  * Suggested by ESLint instead of `{}`
@@ -17,7 +17,7 @@ export type Empty = Record<never, never>;
  */
 export function useNullableContext<T>(
   labelledContext: Record<string, Context<T | null>>
-) {
+): T {
   const entries = Object.entries(labelledContext);
   if (entries.length > 1) {
     throw new Error("Possible improper use of custom context hook");
@@ -29,6 +29,22 @@ export function useNullableContext<T>(
     throw new Error(`${label} not provided`);
   }
   return provision;
+}
+
+export function accessNullableRef<T>(
+  labelledRef: Record<string, RefObject<T>>
+): T {
+  const entries = Object.entries(labelledRef);
+  if (entries.length > 1) {
+    throw new Error("Possible improper use of ref wrapper");
+  }
+  const [label, ref] = entries[0];
+
+  const current = ref.current;
+  if (current === null) {
+    throw new Error(`${label} reference does not exist`);
+  }
+  return current;
 }
 
 // cspell:words clsx
