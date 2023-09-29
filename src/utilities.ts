@@ -89,3 +89,15 @@ export function sum(...numbers: number[]): number {
   for (const num of numbers) result += num;
   return result;
 }
+
+export function minmax(...numbers: number[]): [number, number] {
+  if (numbers.length === 0) return [NaN, NaN];
+
+  let min = numbers[0];
+  let max = numbers[0];
+  for (const num of numbers) {
+    if (num < min) min = num;
+    if (max < num) max = num;
+  }
+  return [min, max];
+}

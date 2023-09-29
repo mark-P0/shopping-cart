@@ -1,5 +1,5 @@
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
-import { useRef } from "react";
+import { FormEvent, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import {
   CatalogContext,
@@ -11,6 +11,7 @@ import {
   C,
   accessNullableRef,
   formatPrice,
+  minmax,
   useNullableContext,
 } from "../utilities.ts";
 import {
@@ -19,6 +20,83 @@ import {
   CartPreviewProvider,
 } from "./components/CartPreview.tsx";
 import { Spinner } from "./components/Spinner.tsx";
+
+function PriceInputs() {
+  const { vehicles } = useNullableContext({ VehiclesContext });
+  const { priceMin, priceMax, changeMinimumPrice, changeMaximumPrice } =
+    useNullableContext({ CatalogContext });
+  const prices = vehicles.map(({ price }) => price);
+  const [lowest, highest] = minmax(...prices);
+
+  const sliderMarkerListId = "markers";
+
+  function changeMin(event: FormEvent<HTMLInputElement>) {
+    const value = event.currentTarget.valueAsNumber;
+    changeMinimumPrice(value);
+  }
+  function changeMax(event: FormEvent<HTMLInputElement>) {
+    const value = event.currentTarget.valueAsNumber;
+    changeMaximumPrice(value);
+  }
+
+  return (
+    <fieldset className="grid gap-3">
+      <legend>Price</legend>
+      <section className="flex gap-3 mx-auto">
+        <label className="w-1/3">
+          <span className="hidden">Min</span>
+          <input
+            className="w-full text-black"
+            type="number"
+            name="priceMin"
+            value={priceMin}
+            readOnly
+          />
+        </label>
+        <span>to</span>
+        <label className="w-1/3">
+          <span className="hidden">Max</span>
+          <input
+            className="w-full text-black"
+            type="number"
+            name="priceMax"
+            value={priceMax}
+            readOnly
+          />
+        </label>
+      </section>
+      <label className="grid grid-cols-[1fr_5fr]">
+        Min
+        <input
+          type="range"
+          name="priceMin"
+          min={lowest}
+          max={highest}
+          value={priceMin}
+          onInput={changeMin}
+          list={sliderMarkerListId}
+        />
+      </label>
+      <label className="grid grid-cols-[1fr_5fr]">
+        Max
+        <input
+          type="range"
+          name="priceMax"
+          min={lowest}
+          max={highest}
+          value={priceMax}
+          onInput={changeMax}
+          list={sliderMarkerListId}
+        />
+      </label>
+      <datalist id={sliderMarkerListId}>
+        {prices.map((price, idx) => (
+          <option key={idx} value={price}></option>
+        ))}
+      </datalist>
+    </fieldset>
+  );
+}
 
 function ProductListSettings() {
   const { vehicles } = useNullableContext({ VehiclesContext });
@@ -51,8 +129,8 @@ function ProductListSettings() {
   );
   return (
     <aside className="h-full overflow-hidden">
-      <form ref={formRef} onInput={filter} className={cls}>
-        <fieldset className="columns-2">
+      <form ref={formRef} className={cls}>
+        <fieldset className="columns-2" onInput={filter}>
           <legend>Brand</legend>
           {brands.map((brand) => (
             <label key={brand} className="flex gap-2 items-center truncate">
@@ -61,6 +139,7 @@ function ProductListSettings() {
             </label>
           ))}
         </fieldset>
+        <PriceInputs />
       </form>
     </aside>
   );
