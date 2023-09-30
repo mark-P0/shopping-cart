@@ -1,10 +1,11 @@
-import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
+import { EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
 import { PropsWithChildren, createContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../../model/vehicles.ts";
 import { formatPrice, useNullableContext } from "../../utilities.ts";
+import { TextButton } from "./Buttons.tsx";
 import { ModalOverlay } from "./ModalOverlay.tsx";
 
 type CartPreviewProvision = {
@@ -89,12 +90,7 @@ export function CartPreview() {
         <footer className="grid place-items-end">
           {!isCartEmpty && (
             <Link to="/cart">
-              <button
-                disabled={isCartEmpty}
-                className="bg-black px-3 py-2 uppercase font-bold tracking-wider disabled:opacity-25"
-              >
-                {!hasExcess ? "Manage" : "View All"}
-              </button>
+              <TextButton text={!hasExcess ? "Manage" : "View All"} />
             </Link>
           )}
         </footer>

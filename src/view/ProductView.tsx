@@ -1,3 +1,4 @@
+import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { CartContext } from "../controller/contexts/CartContext.tsx";
@@ -5,6 +6,7 @@ import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, useNullableContext } from "../utilities.ts";
+import { IconButton, TextButton } from "./components/Buttons.tsx";
 import {
   ModalOverlay,
   ModalOverlayContext,
@@ -41,27 +43,16 @@ function ProductToCartControls({
 
   return (
     <footer className="flex justify-end gap-6">
-      <button
-        className="bg-black px-3 py-2 uppercase font-bold tracking-wider"
-        onClick={addToCartAndHideOverlay}
-      >
-        Add to Cart
-      </button>
+      <TextButton text="Add to Cart" onClick={addToCartAndHideOverlay} />
       <div className="flex items-center gap-1">
-        <button
-          disabled={isDecrementDisabled}
-          className="bg-black rounded-full h-8 w-8 font-bold disabled:opacity-25"
+        <IconButton
+          icon={<MinusIcon />}
+          className="h-8"
           onClick={decrement}
-        >
-          -
-        </button>
+          disabled={isDecrementDisabled}
+        />
         <span className="h-7 w-7 grid place-items-center">{qty}</span>
-        <button
-          className="bg-black rounded-full h-8 w-8 font-bold"
-          onClick={increment}
-        >
-          +
-        </button>
+        <IconButton icon={<PlusIcon />} className="h-8" onClick={increment} />
       </div>
     </footer>
   );

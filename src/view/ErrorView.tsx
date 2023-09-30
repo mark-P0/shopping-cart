@@ -1,5 +1,6 @@
-import { ExclamationTriangleIcon } from "@heroicons/react/24/solid";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { Link, isRouteErrorResponse, useRouteError } from "react-router-dom";
+import { TextButton } from "./components/Buttons.tsx";
 
 export function ErrorView() {
   const error = useRouteError();
@@ -30,9 +31,7 @@ export function ErrorView() {
           </figcaption>
         </figure>
         <Link to="/catalog">
-          <button className="bg-black px-3 py-2 uppercase tracking-widest font-bold">
-            Back to Catalog
-          </button>
+          <TextButton text="Back to Catalog" />
         </Link>
       </div>
     </main>

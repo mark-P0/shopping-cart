@@ -1,4 +1,7 @@
-import { BarsArrowDownIcon, BarsArrowUpIcon } from "@heroicons/react/20/solid";
+import {
+  BarsArrowDownIcon,
+  BarsArrowUpIcon,
+} from "@heroicons/react/24/outline";
 import { ComponentProps, FormEvent, RefObject, useRef } from "react";
 import { CatalogContext } from "../../controller/contexts/CatalogContext.tsx";
 import { VehiclesContext } from "../../controller/contexts/VehiclesContext.tsx";
@@ -7,8 +10,10 @@ import {
   C,
   accessNullableRef,
   minmax,
+  raise,
   useNullableContext,
 } from "../../utilities.ts";
+import { IconButton } from "./Buttons.tsx";
 
 function FieldSet(props: { legend: string } & ComponentProps<"fieldset">) {
   const { legend, className, children } = props;
@@ -33,6 +38,15 @@ function SortOrder() {
     if (sortOrder === "desc") setOrder("asc");
   }
 
+  const icon =
+    sortOrder === "asc" ? (
+      <BarsArrowDownIcon />
+    ) : sortOrder === "desc" ? (
+      <BarsArrowUpIcon />
+    ) : (
+      raise(`Unknown sort order ${sortOrder}`)
+    );
+
   return (
     <FieldSet
       legend={"Sort"}
@@ -51,14 +65,7 @@ function SortOrder() {
           </label>
         ))}
       </section>
-      <button
-        type="button"
-        className="h-6 aspect-square"
-        onClick={changeSortOrder}
-      >
-        {sortOrder === "asc" && <BarsArrowDownIcon className="h-full w-full" />}
-        {sortOrder === "desc" && <BarsArrowUpIcon className="h-full w-full" />}
-      </button>
+      <IconButton icon={icon} className="h-10" onClick={changeSortOrder} />
     </FieldSet>
   );
 }

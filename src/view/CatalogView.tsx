@@ -1,8 +1,9 @@
-import { ShoppingCartIcon } from "@heroicons/react/20/solid";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Link, Outlet } from "react-router-dom";
 import { CatalogContextProvider } from "../controller/contexts/CatalogContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { useNullableContext } from "../utilities.ts";
+import { IconButton } from "./components/Buttons.tsx";
 import {
   CartPreview,
   CartPreviewContext,
@@ -45,9 +46,11 @@ function CatalogViewContents() {
       <header>
         <nav className="h-full flex justify-between">
           <Link to="/">Solar Crown</Link>
-          <button className="h-full aspect-square" onClick={showPreview}>
-            <ShoppingCartIcon />
-          </button>
+          <IconButton
+            icon={<ShoppingCartIcon />}
+            className="h-10"
+            onClick={showPreview}
+          />
         </nav>
       </header>
       {main}

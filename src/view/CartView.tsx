@@ -1,11 +1,17 @@
-import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/20/solid";
-import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
+import {
+  EllipsisHorizontalIcon,
+  ListBulletIcon,
+  MinusIcon,
+  PlusIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, sum, useNullableContext } from "../utilities.ts";
+import { IconButton, TextButton } from "./components/Buttons.tsx";
 import { ModalOverlay } from "./components/ModalOverlay.tsx";
 
 const rowCls = C(
@@ -35,11 +41,11 @@ function CartListHeader() {
 function DeleteButton({ id }: { id: Vehicle["id"] }) {
   const { removeFromCart } = useNullableContext({ CartContext });
 
-  return (
-    <button className="h-full aspect-square" onClick={() => removeFromCart(id)}>
-      <TrashIcon />
-    </button>
-  );
+  function remove() {
+    removeFromCart(id);
+  }
+
+  return <IconButton icon={<TrashIcon />} className="h-9" onClick={remove} />;
 }
 
 function Counter({ id, qty }: { id: Vehicle["id"]; qty: number }) {
@@ -57,22 +63,14 @@ function Counter({ id, qty }: { id: Vehicle["id"]; qty: number }) {
 
   return (
     <form className="flex items-center gap-3">
-      <button
-        type="button"
-        disabled={isDecrementDisabled}
-        className="h-8 w-8 p-2 bg-black rounded-full disabled:opacity-25"
+      <IconButton
+        icon={<MinusIcon />}
+        className="h-8"
         onClick={decrement}
-      >
-        <MinusIcon />
-      </button>
+        disabled={isDecrementDisabled}
+      />
       {qty}
-      <button
-        type="button"
-        className="h-8 w-8 p-2 bg-black rounded-full"
-        onClick={increment}
-      >
-        <PlusIcon />
-      </button>
+      <IconButton icon={<PlusIcon />} className="h-8" onClick={increment} />
     </form>
   );
 }
@@ -106,7 +104,7 @@ function CartItem({ id, qty }: { id: Vehicle["id"]; qty: number }) {
         <Counter id={id} qty={qty} />
       </li>
       <li className="uppercase tracking-widest text-sm">{subtotal}</li>
-      <li className="h-5 aspect-square">
+      <li className="grid place-items-center">
         <DeleteButton id={id} />
       </li>
     </ol>
@@ -166,7 +164,9 @@ export function CartView() {
       <header>
         <nav className="h-full flex justify-between">
           <Link to="/">Solar Crown</Link>
-          <Link to="/catalog">Catalog</Link>
+          <Link to="/catalog">
+            <IconButton icon={<ListBulletIcon />} className="h-10" />
+          </Link>
         </nav>
       </header>
       <main className="overflow-hidden h-full grid place-items-center">
@@ -178,12 +178,7 @@ export function CartView() {
             Total:
             <span className="ml-3 text-xl font-bold">{totalPriceStr}</span>
           </div>
-          <button
-            className="bg-black px-3 py-2 uppercase tracking-widest font-bold"
-            onClick={showMockNotice}
-          >
-            Checkout
-          </button>
+          <TextButton text="Checkout" onClick={showMockNotice} />
         </footer>
       )}
       {cart.size > 0 && isMockNoticeShown && (
