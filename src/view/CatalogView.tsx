@@ -12,7 +12,6 @@ import {
 import { Logo } from "./components/Logo.tsx";
 import { ProductList } from "./components/ProductList.tsx";
 import { ProductListSettings } from "./components/ProductListSettings.tsx";
-import { Spinner } from "./components/Spinner.tsx";
 
 function ExtLink({ text, to }: { text: string; to: string }) {
   return (
@@ -33,7 +32,7 @@ function CatalogViewContents() {
   const main =
     vehicles.length === 0 ? (
       <main className="h-full grid place-items-center bg-neutral-900 text-white">
-        <Spinner className="w-24 h-24" />
+        <figure className="w-24 aspect-square bg-neutral-700 rounded-full animate-ping"></figure>
       </main>
     ) : (
       <main className="h-full overflow-hidden grid grid-cols-[1fr_4fr] gap-3">
@@ -60,14 +59,16 @@ function CatalogViewContents() {
         </nav>
       </header>
       {main}
-      <footer className="text-center uppercase text-xs tracking-widest text-neutral-700">
-        Data gathered from{" "}
-        <ExtLink
-          text="Test Drive Unlimited 2"
-          to="https://testdrive.fandom.com/wiki/Test_Drive_Unlimited_2/Vehicles"
-        />{" "}
-        and <ExtLink text="Forza Wiki" to="https://forza.fandom.com" />
-      </footer>
+      {vehicles.length > 0 && (
+        <footer className="text-center uppercase text-xs tracking-widest text-neutral-700">
+          Data gathered from{" "}
+          <ExtLink
+            text="Test Drive Unlimited 2"
+            to="https://testdrive.fandom.com/wiki/Test_Drive_Unlimited_2/Vehicles"
+          />{" "}
+          and <ExtLink text="Forza Wiki" to="https://forza.fandom.com" />
+        </footer>
+      )}
       <Outlet />
       {isShown && <CartPreview />}
     </div>

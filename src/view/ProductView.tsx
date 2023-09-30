@@ -16,7 +16,6 @@ import {
   ModalOverlay,
   ModalOverlayContext,
 } from "./components/ModalOverlay.tsx";
-import { Spinner } from "./components/Spinner.tsx";
 
 type ProductToCartControlsProps = {
   product: Vehicle;
@@ -68,11 +67,7 @@ export function ProductView() {
   const { vehicles } = useNullableContext({ VehiclesContext });
   const data = vehicles.find(({ id }) => id === productId);
   if (data === undefined) {
-    return (
-      <ModalOverlay modalOrigin="center">
-        <Spinner className="w-16 h-16" />
-      </ModalOverlay>
-    );
+    return null;
   }
 
   const { brand, model, description, image } = data;
