@@ -53,7 +53,7 @@ function SortOrder() {
       </section>
       <button
         type="button"
-        className="h-7 aspect-square"
+        className="h-6 aspect-square"
         onClick={changeSortOrder}
       >
         {sortOrder === "asc" && <BarsArrowDownIcon className="h-full w-full" />}
