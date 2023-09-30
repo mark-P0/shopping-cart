@@ -42,7 +42,7 @@ function PriceInputs() {
       className="w-full text-black"
       type="number"
       name="priceMin"
-      value={priceMin}
+      value={Number.isNaN(priceMin) ? lowest : priceMin}
       readOnly
     />
   );
@@ -51,7 +51,7 @@ function PriceInputs() {
       className="w-full text-black"
       type="number"
       name="priceMax"
-      value={priceMax}
+      value={Number.isNaN(priceMax) ? highest : priceMax}
       readOnly
     />
   );
@@ -61,7 +61,7 @@ function PriceInputs() {
       name="priceMin"
       min={lowest}
       max={highest}
-      value={priceMin}
+      value={Number.isNaN(priceMin) ? lowest : priceMin}
       onInput={changeMin}
       list={sliderMarkerListId}
     />
@@ -72,7 +72,7 @@ function PriceInputs() {
       name="priceMax"
       min={lowest}
       max={highest}
-      value={priceMax}
+      value={Number.isNaN(priceMax) ? highest : priceMax}
       onInput={changeMax}
       list={sliderMarkerListId}
     />
