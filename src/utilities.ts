@@ -1,4 +1,4 @@
-import { Context, useContext } from "react";
+import { Context, RefObject, useContext } from "react";
 
 /**
  * Suggested by ESLint instead of `{}`
@@ -17,7 +17,7 @@ export type Empty = Record<never, never>;
  */
 export function useNullableContext<T>(
   labelledContext: Record<string, Context<T | null>>
-) {
+): T {
   const entries = Object.entries(labelledContext);
   if (entries.length > 1) {
     throw new Error("Possible improper use of custom context hook");
@@ -29,6 +29,22 @@ export function useNullableContext<T>(
     throw new Error(`${label} not provided`);
   }
   return provision;
+}
+
+export function accessNullableRef<T>(
+  labelledRef: Record<string, RefObject<T>>
+): T {
+  const entries = Object.entries(labelledRef);
+  if (entries.length > 1) {
+    throw new Error("Possible improper use of ref wrapper");
+  }
+  const [label, ref] = entries[0];
+
+  const current = ref.current;
+  if (current === null) {
+    throw new Error(`${label} reference does not exist`);
+  }
+  return current;
 }
 
 // cspell:words clsx
@@ -68,8 +84,29 @@ export function formatPrice(format: PriceFormat, price: number): string {
   return PriceFormatter[format].format(price);
 }
 
+/**
+ * Credits to
+ * - "MapleLeaf" on Twitter
+ * - https://www.youtube.com/post/Ugkx6PsS8v6CMbRPnt020qV6k2gzhyEHhgdU
+ */
+export function raise(msg: string): never {
+  throw new Error(msg);
+}
+
 export function sum(...numbers: number[]): number {
   let result = 0;
   for (const num of numbers) result += num;
   return result;
+}
+
+export function minmax(...numbers: number[]): [number, number] {
+  if (numbers.length === 0) return [NaN, NaN];
+
+  let min = numbers[0];
+  let max = numbers[0];
+  for (const num of numbers) {
+    if (num < min) min = num;
+    if (max < num) max = num;
+  }
+  return [min, max];
 }
