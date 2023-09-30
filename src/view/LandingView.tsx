@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
-import { C } from "../utilities.ts";
+import { TextButton } from "./components/Buttons.tsx";
+import { Logo } from "./components/Logo.tsx";
 
-// TODO Image logo?
-// TODO Pulsating logo?
 export function LandingView() {
-  const centerOffsetClasses = C(
-    "absolute top-full left-1/2 -translate-x-1/2",
-    "mt-2 px-5 py-3 rounded-full",
-    "bg-black",
-    "text-sm tracking-widest uppercase"
-  );
   return (
-    <main className="h-screen grid bg-neutral-900 text-white ">
-      <div className="relative place-self-center px-4 py-3 font-thin text-5xl tracking-wider bg-neutral-50/10">
-        Solar Crown
-        <Link className={centerOffsetClasses} to="/catalog">
-          View Catalog
-        </Link>
-      </div>
+    <main className="h-screen grid place-items-center bg-neutral-900">
+      <figure className="relative">
+        <Logo className="animate-[pulse_5s_ease-in-out_infinite] hover:animate-none bg-transparent text-white" />
+        <figcaption className="absolute left-1/2 -translate-x-1/2">
+          <Link to="/catalog">
+            <TextButton
+              text="View Catalog"
+              className="w-max px-8 py-3 text-sm rounded-full font-light bg-black/25 hover:bg-black"
+            />
+          </Link>
+        </figcaption>
+      </figure>
     </main>
   );
 }

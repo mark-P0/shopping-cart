@@ -9,6 +9,7 @@ import {
   CartPreviewContext,
   CartPreviewProvider,
 } from "./components/CartPreview.tsx";
+import { Logo } from "./components/Logo.tsx";
 import { ProductList } from "./components/ProductList.tsx";
 import { ProductListSettings } from "./components/ProductListSettings.tsx";
 import { Spinner } from "./components/Spinner.tsx";
@@ -42,10 +43,15 @@ function CatalogViewContents() {
     );
 
   return (
-    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8 pb-3">
+    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-6 pb-3">
       <header>
-        <nav className="h-full flex justify-between">
-          <Link to="/">Solar Crown</Link>
+        <nav className="h-full flex justify-between items-center">
+          <Link to="/">
+            <IconButton
+              icon={<Logo />}
+              className="h-10 bg-transparent hover:bg-black p-1"
+            />
+          </Link>
           <IconButton
             icon={<ShoppingCartIcon />}
             className="h-10"

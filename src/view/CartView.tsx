@@ -12,6 +12,7 @@ import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
 import { C, formatPrice, sum, useNullableContext } from "../utilities.ts";
 import { IconButton, TextButton } from "./components/Buttons.tsx";
+import { Logo } from "./components/Logo.tsx";
 import { ModalOverlay } from "./components/ModalOverlay.tsx";
 
 const rowCls = C(
@@ -160,10 +161,15 @@ export function CartView() {
   );
   const totalPriceStr = formatPrice("standard", totalPrice);
   return (
-    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">
+    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-6">
       <header>
-        <nav className="h-full flex justify-between">
-          <Link to="/">Solar Crown</Link>
+        <nav className="h-full flex justify-between items-center">
+          <Link to="/">
+            <IconButton
+              icon={<Logo />}
+              className="h-10 bg-transparent hover:bg-black p-1"
+            />
+          </Link>
           <Link to="/catalog">
             <IconButton icon={<ListBulletIcon />} className="h-10" />
           </Link>
