@@ -43,7 +43,7 @@ function PriceInputs() {
       type="number"
       name="priceMin"
       value={Number.isNaN(priceMin) ? lowest : priceMin}
-      readOnly
+      onInput={changeMin}
     />
   );
   const inputBoxMax = (
@@ -52,7 +52,7 @@ function PriceInputs() {
       type="number"
       name="priceMax"
       value={Number.isNaN(priceMax) ? highest : priceMax}
-      readOnly
+      onInput={changeMax}
     />
   );
   const inputSliderMin = (
