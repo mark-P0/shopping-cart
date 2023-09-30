@@ -45,7 +45,7 @@ export function ProductList() {
   const { filtered: items } = useNullableContext({ CatalogContext });
 
   const classes = C(
-    "h-full overflow-y-scroll",
+    "h-full overflow-y-auto",
     "grid grid-cols-3 auto-rows-[33%]",
     "gap-4 p-4",
     "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600",
