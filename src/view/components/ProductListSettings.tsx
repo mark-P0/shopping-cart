@@ -1,4 +1,4 @@
-import { FormEvent, RefObject, useRef } from "react";
+import { ComponentProps, FormEvent, RefObject, useRef } from "react";
 import { CatalogContext } from "../../controller/contexts/CatalogContext.tsx";
 import { VehiclesContext } from "../../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../../model/vehicles.ts";
@@ -8,6 +8,16 @@ import {
   minmax,
   useNullableContext,
 } from "../../utilities.ts";
+
+function FieldSet(props: { legend: string } & ComponentProps<"fieldset">) {
+  const { legend, children } = props;
+  return (
+    <fieldset {...props}>
+      <legend>{legend}</legend>
+      {children}
+    </fieldset>
+  );
+}
 
 function PriceInputs() {
   const { vehicles } = useNullableContext({ VehiclesContext });
@@ -28,8 +38,7 @@ function PriceInputs() {
   }
 
   return (
-    <fieldset className="grid gap-3">
-      <legend>Price</legend>
+    <FieldSet legend={"Price"} className="grid gap-3">
       <section className="flex gap-3 mx-auto">
         <label className="w-1/3">
           <span className="hidden">Min</span>
@@ -82,7 +91,7 @@ function PriceInputs() {
           <option key={idx} value={price}></option>
         ))}
       </datalist>
-    </fieldset>
+    </FieldSet>
   );
 }
 
@@ -107,15 +116,14 @@ function BrandFilters({ formRef }: { formRef: RefObject<HTMLFormElement> }) {
   brands = brands.sort((a, b) => (a < b ? -1 : 1));
 
   return (
-    <fieldset className="columns-2" onInput={filter}>
-      <legend>Brand</legend>
+    <FieldSet legend={"Brand"} className="columns-2" onInput={filter}>
       {brands.map((brand) => (
         <label key={brand} className="flex gap-2 items-center truncate">
           <input type="checkbox" name="brand" value={brand} />
           {brand}
         </label>
       ))}
-    </fieldset>
+    </FieldSet>
   );
 }
 
