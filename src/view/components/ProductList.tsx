@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-
 import { CatalogContext } from "../../controller/contexts/CatalogContext.tsx";
 import { Vehicle } from "../../model/vehicles.ts";
 import { C, formatPrice, useNullableContext } from "../../utilities.ts";
-import { Spinner } from "./Spinner.tsx";
 
 function Product({ data }: { data: Vehicle }) {
   const { id, brand, model, image } = data;
@@ -45,13 +43,6 @@ function Product({ data }: { data: Vehicle }) {
 
 export function ProductList() {
   const { filtered: items } = useNullableContext({ CatalogContext });
-  if (items.length === 0) {
-    return (
-      <div className="grid place-items-center">
-        <Spinner className="w-24 h-24" />
-      </div>
-    );
-  }
 
   const classes = C(
     "h-full overflow-y-scroll",
