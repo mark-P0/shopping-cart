@@ -1,5 +1,5 @@
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
-import { FormEvent, useRef } from "react";
+import { FormEvent, RefObject, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import {
   CatalogContext,
@@ -98,30 +98,41 @@ function PriceInputs() {
   );
 }
 
-function ProductListSettings() {
+function BrandFilters({ formRef }: { formRef: RefObject<HTMLFormElement> }) {
   const { vehicles } = useNullableContext({ VehiclesContext });
   const { setBrands } = useNullableContext({ CatalogContext });
-  const formRef = useRef<HTMLFormElement>(null);
 
-  type DataEntry =
-    | ["brand", Vehicle["brand"]]
-    | ["priceMin", Vehicle["price"]]
-    | ["priceMax", Vehicle["price"]];
   function filter() {
     const form = accessNullableRef({ formRef });
-    const data = [...new FormData(form).entries()] as DataEntry[];
+    const data = [...new FormData(form).entries()];
 
     const brandsToShow = data
       .filter(
         (entry): entry is ["brand", Vehicle["brand"]] => entry[0] === "brand"
       )
-      .map(([, value]) => value);
+      .map(([, brand]) => brand);
     setBrands(brandsToShow);
   }
 
-  const brands = [...new Set(vehicles.map(({ brand }) => brand))].sort((a, b) =>
-    a < b ? -1 : 1
+  let brands: Array<Vehicle["brand"]>;
+  brands = [...new Set(vehicles.map(({ brand }) => brand))];
+  brands = brands.sort((a, b) => (a < b ? -1 : 1));
+
+  return (
+    <fieldset className="columns-2" onInput={filter}>
+      <legend>Brand</legend>
+      {brands.map((brand) => (
+        <label key={brand} className="flex gap-2 items-center truncate">
+          <input type="checkbox" name="brand" value={brand} />
+          {brand}
+        </label>
+      ))}
+    </fieldset>
   );
+}
+
+function ProductListSettings() {
+  const formRef = useRef<HTMLFormElement>(null);
 
   const cls = C(
     "h-full overflow-y-auto",
@@ -130,15 +141,7 @@ function ProductListSettings() {
   return (
     <aside className="h-full overflow-hidden">
       <form ref={formRef} className={cls}>
-        <fieldset className="columns-2" onInput={filter}>
-          <legend>Brand</legend>
-          {brands.map((brand) => (
-            <label key={brand} className="flex gap-2 items-center truncate">
-              <input type="checkbox" name="brand" value={brand} />
-              {brand}
-            </label>
-          ))}
-        </fieldset>
+        <BrandFilters formRef={formRef} />
         <PriceInputs />
       </form>
     </aside>
