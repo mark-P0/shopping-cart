@@ -12,6 +12,17 @@ import { ProductList } from "./components/ProductList.tsx";
 import { ProductListSettings } from "./components/ProductListSettings.tsx";
 import { Spinner } from "./components/Spinner.tsx";
 
+function ExtLink({ text, to }: { text: string; to: string }) {
+  return (
+    <a
+      href={to}
+      className="hover:underline underline-offset-4 hover:invert transition"
+    >
+      {text}
+    </a>
+  );
+}
+
 function CatalogViewContents() {
   const { vehicles } = useNullableContext({ VehiclesContext });
   const { isShown, show } = useNullableContext({ CartPreviewContext });
@@ -30,7 +41,7 @@ function CatalogViewContents() {
     );
 
   return (
-    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8">
+    <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-8 pb-3">
       <header>
         <nav className="h-full flex justify-between">
           <Link to="/">Solar Crown</Link>
@@ -40,7 +51,14 @@ function CatalogViewContents() {
         </nav>
       </header>
       {main}
-      {/* <footer><code>footer</code></footer> */}
+      <footer className="text-center uppercase text-xs tracking-widest text-neutral-700">
+        Data gathered from{" "}
+        <ExtLink
+          text="Test Drive Unlimited 2"
+          to="https://testdrive.fandom.com/wiki/Test_Drive_Unlimited_2/Vehicles"
+        />{" "}
+        and <ExtLink text="Forza Wiki" to="https://forza.fandom.com" />
+      </footer>
       <Outlet />
       {isShown && <CartPreview />}
     </div>
