@@ -41,6 +41,14 @@ function CatalogViewContents() {
       </main>
     );
 
+  const links = [
+    <ExtLink
+      text="Test Drive Unlimited 2"
+      to="https://testdrive.fandom.com/wiki/Test_Drive_Unlimited_2/Vehicles"
+    />,
+    <ExtLink text="Forza Wiki" to="https://forza.fandom.com" />,
+  ];
+
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-6 pb-3">
       <header>
@@ -61,12 +69,7 @@ function CatalogViewContents() {
       {main}
       {vehicles.length > 0 && (
         <footer className="text-center uppercase text-xs tracking-widest text-neutral-700">
-          Data gathered from{" "}
-          <ExtLink
-            text="Test Drive Unlimited 2"
-            to="https://testdrive.fandom.com/wiki/Test_Drive_Unlimited_2/Vehicles"
-          />{" "}
-          and <ExtLink text="Forza Wiki" to="https://forza.fandom.com" />
+          Data gathered from {links[0]} and {links[1]}
         </footer>
       )}
       <Outlet />
