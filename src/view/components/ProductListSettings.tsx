@@ -37,54 +37,67 @@ function PriceInputs() {
     changeMaximumPrice(value);
   }
 
+  const inputBoxMin = (
+    <input
+      className="w-full text-black"
+      type="number"
+      name="priceMin"
+      value={priceMin}
+      readOnly
+    />
+  );
+  const inputBoxMax = (
+    <input
+      className="w-full text-black"
+      type="number"
+      name="priceMax"
+      value={priceMax}
+      readOnly
+    />
+  );
+  const inputSliderMin = (
+    <input
+      type="range"
+      name="priceMin"
+      min={lowest}
+      max={highest}
+      value={priceMin}
+      onInput={changeMin}
+      list={sliderMarkerListId}
+    />
+  );
+  const inputSliderMax = (
+    <input
+      type="range"
+      name="priceMax"
+      min={lowest}
+      max={highest}
+      value={priceMax}
+      onInput={changeMax}
+      list={sliderMarkerListId}
+    />
+  );
+
   return (
     <FieldSet legend={"Price"} className="grid gap-3">
       <section className="flex gap-3 mx-auto">
         <label className="w-1/3">
           <span className="hidden">Min</span>
-          <input
-            className="w-full text-black"
-            type="number"
-            name="priceMin"
-            value={priceMin}
-            readOnly
-          />
+          {inputBoxMin}
         </label>
         <span>to</span>
         <label className="w-1/3">
           <span className="hidden">Max</span>
-          <input
-            className="w-full text-black"
-            type="number"
-            name="priceMax"
-            value={priceMax}
-            readOnly
-          />
+          {inputBoxMax}
         </label>
       </section>
       <label className="grid grid-cols-[1fr_5fr]">
         Min
-        <input
-          type="range"
-          name="priceMin"
-          min={lowest}
-          max={highest}
-          value={priceMin}
-          onInput={changeMin}
-          list={sliderMarkerListId}
-        />
+        {inputSliderMin}
       </label>
       <label className="grid grid-cols-[1fr_5fr]">
         Max
-        <input
-          type="range"
-          name="priceMax"
-          min={lowest}
-          max={highest}
-          value={priceMax}
-          onInput={changeMax}
-          list={sliderMarkerListId}
-        />
+        {inputSliderMax}
       </label>
       <datalist id={sliderMarkerListId}>
         {prices.map((price, idx) => (
