@@ -1,3 +1,4 @@
+import { BarsArrowDownIcon, BarsArrowUpIcon } from "@heroicons/react/20/solid";
 import { ComponentProps, FormEvent, RefObject, useRef } from "react";
 import { CatalogContext } from "../../controller/contexts/CatalogContext.tsx";
 import { VehiclesContext } from "../../controller/contexts/VehiclesContext.tsx";
@@ -16,8 +17,49 @@ function FieldSet(props: { legend: string } & ComponentProps<"fieldset">) {
       <legend className="float-left uppercase font-bold text-sm tracking-widest">
         {legend}
       </legend>
-      <section className={className}>{children}</section>
+      <div className={className}>{children}</div>
     </fieldset>
+  );
+}
+
+function SortOrder() {
+  const { sortOptions, sortKey, setSorting, setOrder, sortOrder } =
+    useNullableContext({
+      CatalogContext,
+    });
+
+  function changeSortOrder() {
+    if (sortOrder === "asc") setOrder("desc");
+    if (sortOrder === "desc") setOrder("asc");
+  }
+
+  return (
+    <FieldSet
+      legend={"Sort"}
+      className="flex justify-between text-xs uppercase font-thin tracking-widest"
+    >
+      <section className="grid gap-2">
+        {sortOptions.map((option) => (
+          <label key={option} className="flex gap-2 items-center">
+            <input
+              type="radio"
+              name="sorting"
+              checked={sortKey === option}
+              onClick={() => setSorting(option)}
+            />
+            {option}
+          </label>
+        ))}
+      </section>
+      <button
+        type="button"
+        className="h-7 aspect-square"
+        onClick={changeSortOrder}
+      >
+        {sortOrder === "asc" && <BarsArrowDownIcon className="h-full w-full" />}
+        {sortOrder === "desc" && <BarsArrowUpIcon className="h-full w-full" />}
+      </button>
+    </FieldSet>
   );
 }
 
@@ -135,14 +177,14 @@ function BrandFilters({ formRef }: { formRef: RefObject<HTMLFormElement> }) {
 
   const cls = C(
     "flex gap-2 items-center mb-2",
-    "truncate text-xs uppercase font-thin tracking-widest"
+    "text-xs uppercase font-thin tracking-widest"
   );
   return (
-    <FieldSet legend={"Brand"} className="columns-2" onInput={filter}>
+    <FieldSet legend={"Brand"} className="columns-[2_1rem]" onInput={filter}>
       {brands.map((brand) => (
         <label key={brand} className={cls}>
           <input type="checkbox" name="brand" value={brand} />
-          {brand}
+          <span className="truncate">{brand}</span>
         </label>
       ))}
     </FieldSet>
@@ -153,13 +195,15 @@ export function ProductListSettings() {
   const formRef = useRef<HTMLFormElement>(null);
 
   const cls = C(
-    "h-full overflow-y-auto",
-    "grid auto-rows-min gap-5",
+    "h-full overflow-y-auto overflow-x-hidden",
+    "grid auto-rows-min gap-5 pr-3",
     "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600"
   );
   return (
     <aside className="h-full overflow-hidden">
       <form ref={formRef} className={cls}>
+        <SortOrder />
+        <hr className="border-neutral-600" />
         <BrandFilters formRef={formRef} />
         <hr className="border-neutral-600" />
         <PriceInputs />

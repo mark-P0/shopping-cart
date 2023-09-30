@@ -84,6 +84,15 @@ export function formatPrice(format: PriceFormat, price: number): string {
   return PriceFormatter[format].format(price);
 }
 
+/**
+ * Credits to
+ * - "MapleLeaf" on Twitter
+ * - https://www.youtube.com/post/Ugkx6PsS8v6CMbRPnt020qV6k2gzhyEHhgdU
+ */
+export function raise(msg: string): never {
+  throw new Error(msg);
+}
+
 export function sum(...numbers: number[]): number {
   let result = 0;
   for (const num of numbers) result += num;
