@@ -60,6 +60,10 @@ export function C(...classes: Array<string | boolean | null | undefined>) {
   return strings.join(" ");
 }
 
+export const scrollbarCls = C(
+  "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-700"
+);
+
 /**
  * https://stackoverflow.com/q/951021
  */

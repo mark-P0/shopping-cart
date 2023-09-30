@@ -10,7 +10,13 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { Vehicle } from "../model/vehicles.ts";
-import { C, formatPrice, sum, useNullableContext } from "../utilities.ts";
+import {
+  C,
+  formatPrice,
+  scrollbarCls,
+  sum,
+  useNullableContext,
+} from "../utilities.ts";
 import { IconButton, TextButton } from "./components/Buttons.tsx";
 import { Logo } from "./components/Logo.tsx";
 import { ModalOverlay } from "./components/ModalOverlay.tsx";
@@ -118,7 +124,7 @@ function CartList() {
 
   const cls = C(
     "overflow-y-auto h-full w-full grid auto-rows-min gap-3 px-3",
-    "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600"
+    scrollbarCls
   );
   return (
     <ol className={cls}>

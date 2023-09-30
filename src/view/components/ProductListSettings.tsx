@@ -11,6 +11,7 @@ import {
   accessNullableRef,
   minmax,
   raise,
+  scrollbarCls,
   useNullableContext,
 } from "../../utilities.ts";
 import { IconButton } from "./Buttons.tsx";
@@ -204,7 +205,7 @@ export function ProductListSettings() {
   const cls = C(
     "h-full overflow-y-auto overflow-x-hidden",
     "grid auto-rows-min gap-5 pr-3",
-    "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600"
+    scrollbarCls
   );
   return (
     <aside className="h-full overflow-hidden">

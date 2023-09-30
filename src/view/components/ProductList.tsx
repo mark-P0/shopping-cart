@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { CatalogContext } from "../../controller/contexts/CatalogContext.tsx";
 import { Vehicle } from "../../model/vehicles.ts";
-import { C, formatPrice, useNullableContext } from "../../utilities.ts";
+import {
+  C,
+  formatPrice,
+  scrollbarCls,
+  useNullableContext,
+} from "../../utilities.ts";
 
 function Product({ data }: { data: Vehicle }) {
   const { id, brand, model, image } = data;
@@ -48,7 +53,7 @@ export function ProductList() {
     "h-full overflow-y-auto",
     "grid grid-cols-3 auto-rows-[33%]",
     "gap-4 p-4",
-    "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600",
+    scrollbarCls,
     "bg-neutral-800 rounded-xl"
   );
   return (

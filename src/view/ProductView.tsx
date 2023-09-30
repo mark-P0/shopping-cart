@@ -5,7 +5,12 @@ import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
 import { LoadedProductData } from "../controller/loaders/product-loader.ts";
 import { Vehicle } from "../model/vehicles.ts";
-import { C, formatPrice, useNullableContext } from "../utilities.ts";
+import {
+  C,
+  formatPrice,
+  scrollbarCls,
+  useNullableContext,
+} from "../utilities.ts";
 import { IconButton, TextButton } from "./components/Buttons.tsx";
 import {
   ModalOverlay,
@@ -75,7 +80,7 @@ export function ProductView() {
 
   const descClasses = C(
     "overflow-hidden overflow-y-auto",
-    "scrollbar-thin scrollbar-track-neutral-500 scrollbar-thumb-neutral-600",
+    scrollbarCls,
     "py-2 px-3",
     "bg-neutral-800"
   );
