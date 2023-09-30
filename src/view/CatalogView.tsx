@@ -1,4 +1,5 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { CatalogContextProvider } from "../controller/contexts/CatalogContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
@@ -79,6 +80,10 @@ function CatalogViewContents() {
 }
 
 export function CatalogView() {
+  useEffect(() => {
+    document.title = "Catalog | Solar Crown";
+  }, []);
+
   return (
     <CartPreviewProvider>
       <CatalogContextProvider>

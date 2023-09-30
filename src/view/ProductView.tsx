@@ -1,5 +1,5 @@
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
@@ -66,6 +66,17 @@ export function ProductView() {
   const productId = useLoaderData() as LoadedProductData;
   const { vehicles } = useNullableContext({ VehiclesContext });
   const data = vehicles.find(({ id }) => id === productId);
+
+  useEffect(() => {
+    if (data === undefined) {
+      document.title = "... | Solar Crown";
+      return;
+    }
+
+    const { brand, model } = data;
+    document.title = `${brand} ${model} | Solar Crown`;
+  }, [data]);
+
   if (data === undefined) {
     return null;
   }

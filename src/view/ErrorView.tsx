@@ -1,10 +1,15 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { useEffect } from "react";
 import { Link, isRouteErrorResponse, useRouteError } from "react-router-dom";
 import { TextButton } from "./components/Buttons.tsx";
 
 export function ErrorView() {
   const error = useRouteError();
   console.error(error);
+
+  useEffect(() => {
+    document.title = "...? | Solar Crown";
+  }, []);
 
   /** https://stackoverflow.com/a/76126878 */
   let msg = "An error has occurred.";

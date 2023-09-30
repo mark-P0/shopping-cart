@@ -5,7 +5,7 @@ import {
   PlusIcon,
   TrashIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
@@ -153,6 +153,10 @@ export function CartView() {
   const { cart } = useNullableContext({ CartContext });
   const { vehicles } = useNullableContext({ VehiclesContext });
   const [isMockNoticeShown, setIsMockNoticeShown] = useState(false);
+
+  useEffect(() => {
+    document.title = "Cart | Solar Crown";
+  }, []);
 
   function showMockNotice() {
     setIsMockNoticeShown(true);
