@@ -22,6 +22,7 @@ async function create(collectionPath: CollectionPath, document: object) {
     throw new Error(`Error adding document: ${e}`);
   }
 }
+export { create }; // DELETEME - "Fake" usage to allow build
 
 async function createWithId(
   collectionPath: CollectionPath,

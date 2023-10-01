@@ -23,3 +23,5 @@ async function getDownloadLink(path: string) {
   const fileRef = ref(storage, path);
   return await getDownloadURL(fileRef);
 }
+
+export { createBlobFromServedFile, upload, getDownloadLink }; // DELETEME - "Fake" usage to allow build
