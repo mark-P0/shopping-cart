@@ -1,5 +1,20 @@
-import { PropsWithChildren, createContext, useState } from "react";
+import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import { Vehicle } from "../../model/vehicles.ts";
+import { useNullableContext } from "../../utilities.ts"; // DELETEME
+import { VehiclesContext } from "./VehiclesContext.tsx"; // DELETEME
+
+// DELETEME
+class Random {
+  static integer(from: number, to: number) {
+    const range = to - from;
+    const float = Math.random() * range + from;
+    return Math.floor(float);
+  }
+  static choice<T>(items: readonly T[]): T {
+    const idx = Random.integer(0, items.length);
+    return items[idx];
+  }
+}
 
 type Cart = Map<Vehicle["id"], number>;
 type CartProvision = {
@@ -14,6 +29,21 @@ export function CartContextProvider(props: PropsWithChildren) {
   const { children } = props;
   const [cart, setCart] = useState<Cart>(new Map());
   console.log({ cart }); // DELETEME
+
+  // DELETEME
+  {
+    const { vehicles } = useNullableContext({ VehiclesContext });
+    useEffect(() => {
+      if (vehicles.length === 0) return;
+
+      const newCart = new Map(cart);
+      for (let _ = 0; _ < 30; _++) {
+        const { id } = Random.choice(vehicles);
+        newCart.set(id, Random.integer(1, 9 + 1));
+      }
+      setCart(newCart);
+    }, [vehicles, cart]);
+  }
 
   function addToCart({ id }: Vehicle, quantity: number) {
     const existingCt = cart.get(id) ?? 0;
