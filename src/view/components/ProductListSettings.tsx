@@ -51,16 +51,20 @@ function SortOrder() {
   return (
     <FieldSet
       legend={"Sort"}
-      className="flex justify-between text-xs uppercase font-thin tracking-widest"
+      className="flex justify-between text-xs uppercase font-thin tracking-widest pl-1"
     >
       <section className="grid gap-2">
         {sortOptions.map((option) => (
-          <label key={option} className="flex gap-2 items-center">
+          <label
+            key={option}
+            className="flex gap-2 items-center hover:brightness-200 transition"
+          >
             <input
               type="radio"
+              className="bg-black text-white border-neutral-600"
               name="sorting"
               checked={sortKey === option}
-              onClick={() => setSorting(option)}
+              onChange={() => setSorting(option)}
             />
             {option}
           </label>
@@ -89,10 +93,15 @@ function PriceInputs() {
     changeMaximumPrice(value);
   }
 
+  const inputBoxCls = C(
+    "w-full px-2 py-1",
+    "text-sm tracking-wide bg-black text-white border-neutral-600",
+    "hover:brightness-200 transition"
+  );
   const inputBoxMin = (
     <input
-      className="w-full text-black px-2 py-1 text-sm tracking-wide"
       type="number"
+      className={inputBoxCls}
       name="priceMin"
       value={Number.isNaN(priceMin) ? lowest : priceMin}
       onInput={changeMin}
@@ -100,8 +109,8 @@ function PriceInputs() {
   );
   const inputBoxMax = (
     <input
-      className="w-full text-black px-2 py-1 text-sm tracking-wide"
       type="number"
+      className={inputBoxCls}
       name="priceMax"
       value={Number.isNaN(priceMax) ? highest : priceMax}
       onInput={changeMax}
@@ -110,6 +119,7 @@ function PriceInputs() {
   const inputSliderMin = (
     <input
       type="range"
+      className="hover:brightness-200 transition"
       name="priceMin"
       min={lowest}
       max={highest}
@@ -121,6 +131,7 @@ function PriceInputs() {
   const inputSliderMax = (
     <input
       type="range"
+      className="hover:brightness-200 transition"
       name="priceMax"
       min={lowest}
       max={highest}
@@ -133,15 +144,15 @@ function PriceInputs() {
   return (
     <FieldSet
       legend={"Price"}
-      className="grid gap-2 text-xs uppercase tracking-widest"
+      className="grid gap-2 text-xs uppercase tracking-widest pl-1"
     >
       <section className="flex items-center gap-3 mx-auto">
-        <label className="w-1/3">
+        <label className="flex-1">
           <span className="hidden">Min</span>
           {inputBoxMin}
         </label>
         <span>to</span>
-        <label className="w-1/3">
+        <label className="flex-1">
           <span className="hidden">Max</span>
           {inputBoxMax}
         </label>
@@ -185,13 +196,23 @@ function BrandFilters({ formRef }: { formRef: RefObject<HTMLFormElement> }) {
 
   const cls = C(
     "flex gap-2 items-center mb-2",
-    "text-xs uppercase font-thin tracking-widest"
+    "text-xs uppercase font-thin tracking-widest",
+    "hover:brightness-200 transition"
   );
   return (
-    <FieldSet legend={"Brand"} className="columns-[2_1rem]" onInput={filter}>
+    <FieldSet
+      legend={"Brand"}
+      className="columns-[2_1rem] pl-1"
+      onInput={filter}
+    >
       {brands.map((brand) => (
         <label key={brand} className={cls}>
-          <input type="checkbox" name="brand" value={brand} />
+          <input
+            type="checkbox"
+            className="bg-black text-white border-neutral-600"
+            name="brand"
+            value={brand}
+          />
           <span className="truncate">{brand}</span>
         </label>
       ))}

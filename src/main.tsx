@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { AppTree } from "./App.tsx";
 import "./index.css";
+import "./sliders.css";
 
 const router = createBrowserRouter(createRoutesFromElements(AppTree));
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
