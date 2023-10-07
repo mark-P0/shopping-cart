@@ -44,7 +44,7 @@ export function ModalOverlay(props: PropsWithChildren<ModalOverlayProps>) {
   }
 
   const classes = C(
-    "fixed top-0 left-0",
+    "z-50 fixed top-0 left-0",
     "h-screen w-screen",
     ...[
       "grid items-center",

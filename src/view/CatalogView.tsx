@@ -1,9 +1,10 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { CartContext } from "../controller/contexts/CartContext.tsx";
 import { CatalogContextProvider } from "../controller/contexts/CatalogContext.tsx";
 import { VehiclesContext } from "../controller/contexts/VehiclesContext.tsx";
-import { useNullableContext } from "../utilities.ts";
+import { C, useNullableContext } from "../utilities.ts";
 import { IconButton } from "./components/Buttons.tsx";
 import {
   CartPreview,
@@ -25,8 +26,32 @@ function ExtLink({ text, to }: { text: string; to: string }) {
   );
 }
 
+function BadgedElement({
+  element,
+  isBadgeShown,
+  badgeContent = null,
+}: {
+  element: ReactNode;
+  isBadgeShown: boolean;
+  badgeContent?: ReactNode;
+}) {
+  const cls = C(
+    "z-10 absolute top-0 right-0 translate-x-1/3 -translate-y-1/3",
+    "w-6 aspect-square overflow-hidden grid place-items-center p-1 rounded-full",
+    "bg-neutral-600/75 text-xs text-center"
+  );
+  const badge = <span className={cls}>{badgeContent}</span>;
+  return (
+    <div className="relative">
+      {isBadgeShown && badge}
+      {element}
+    </div>
+  );
+}
+
 function CatalogViewContents() {
   const { vehicles } = useNullableContext({ VehiclesContext });
+  const { cart } = useNullableContext({ CartContext });
   const { isShown, show } = useNullableContext({ CartPreviewContext });
   const showPreview = show;
 
@@ -41,7 +66,6 @@ function CatalogViewContents() {
         <ProductList />
       </main>
     );
-
   const links = [
     <ExtLink
       text="Test Drive Unlimited 2"
@@ -49,6 +73,13 @@ function CatalogViewContents() {
     />,
     <ExtLink text="Forza Wiki" to="https://forza.fandom.com" />,
   ];
+  const cartButton = (
+    <IconButton
+      icon={<ShoppingCartIcon />}
+      className="h-10"
+      onClick={showPreview}
+    />
+  );
 
   return (
     <div className="h-screen flex flex-col bg-neutral-900 text-white gap-4 p-6 pb-3">
@@ -60,10 +91,10 @@ function CatalogViewContents() {
               className="h-10 bg-transparent hover:bg-black p-1"
             />
           </Link>
-          <IconButton
-            icon={<ShoppingCartIcon />}
-            className="h-10"
-            onClick={showPreview}
+          <BadgedElement
+            element={cartButton}
+            isBadgeShown={cart.size > 0}
+            badgeContent={cart.size}
           />
         </nav>
       </header>
