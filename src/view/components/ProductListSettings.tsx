@@ -17,9 +17,10 @@ import {
 import { IconButton } from "./Buttons.tsx";
 
 function FieldSet(props: { legend: string } & ComponentProps<"fieldset">) {
-  const { legend, className, children } = props;
+  const { legend, ...attrs } = props;
+  const { className, children } = attrs;
   return (
-    <fieldset {...props} className="grid gap-2">
+    <fieldset {...attrs} className="grid gap-2">
       <legend className="float-left uppercase font-bold text-sm tracking-widest">
         {legend}
       </legend>

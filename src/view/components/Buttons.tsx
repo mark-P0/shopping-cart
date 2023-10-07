@@ -7,7 +7,8 @@ const baseCls = C(
 );
 
 export function TextButton(props: { text: string } & ComponentProps<"button">) {
-  const { text, className } = props;
+  const { text, ...attrs } = props;
+  const { className } = attrs;
 
   const cls = C(
     baseCls,
@@ -15,7 +16,7 @@ export function TextButton(props: { text: string } & ComponentProps<"button">) {
     className
   );
   return (
-    <button type="button" {...props} className={cls}>
+    <button type="button" {...attrs} className={cls}>
       {text}
     </button>
   );
@@ -24,7 +25,8 @@ export function TextButton(props: { text: string } & ComponentProps<"button">) {
 export function IconButton(
   props: { icon: ReactNode } & ComponentProps<"button">
 ) {
-  const { icon, className } = props;
+  const { icon, ...attrs } = props;
+  const { className } = attrs;
 
   const cls = C(baseCls, "aspect-square rounded-full p-2", className);
   return (
